@@ -1,0 +1,11 @@
+{% extends 'card/base.html' %}
+{% load imagekit %}
+
+{% block content %}
+<h1>댓글 삭제</h1>
+<form action="" class="form-horizontal" method="post">
+  {% csrf_token %}
+{{form.as_p}}
+<button class="btn btn-large btn-block btn-primary" type="submit">확인</button>
+</form>
+{% endblock %}
