@@ -15,8 +15,8 @@ def get_image_path(instance, filename):
 class PostNotComment(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL)
     title = models.CharField(max_length=100)
-    ohoystdio_url = models.CharField(max_length=300)
-    ohoystdio_img_src_url = models.CharField(max_length=300)
+    ohoystudio_url = models.CharField(max_length=300)
+    ohoystudio_img_src_url = models.CharField(max_length=300)
     youtube_url = models.TextField(default='')
     call1 = models.CharField(max_length=100)
     call2 = models.CharField(max_length=100)

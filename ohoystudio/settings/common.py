@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'imagekit',
     'card',
     'card2',
+    'event',
 ]
 
 MIDDLEWARE = [

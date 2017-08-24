@@ -9,10 +9,10 @@ import uuid
 import os
 
 def get_image_path(instance, filename):
-    return os.path.join('card', "image_%s" % str(instance), filename)
+    return os.path.join('card3', "event_%s" % str(instance), filename)
 
 
-class Post(models.Model):
+class PostEvent(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL)
     title = models.CharField(max_length=100)
     ohoystudio_url = models.CharField(max_length=300)
@@ -72,11 +72,6 @@ class Post(models.Model):
             upload_to=get_image_path,
             format='JPEG',
             )
-    image11 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
-            upload_to=get_image_path,
-            format='JPEG',
-            )
     image12 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
@@ -110,15 +105,3 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('card:post_detail',args=[self.id])
-
-
-class Comment(models.Model):
-    post = models.ForeignKey(Post)
-    # 이 코멘트는 Post 모델에 대해서 1:N의 관계를 가진다
-    # post_id 라는 필드가 생김 외래키의 영향
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True  ,blank=True)
-    user = models.CharField(max_length=200)
-    password = models.CharField(max_length=50)
-    message = models.CharField(max_length=200)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
