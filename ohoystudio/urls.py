@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^card/', include('card.urls',namespace='card')),
     url(r'^card2/', include('card2.urls',namespace='card2')),
-    url(r'^card3/', include('card3.urls',namespace='card3')),
+    url(r'^card3/', include('event.urls',namespace='event')),
     url(r'^summernote/', include('django_summernote.urls')),
 ]
 

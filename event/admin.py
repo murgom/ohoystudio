@@ -1,5 +1,5 @@
 from django.contrib import admin
-from card2.models import PostEvent
+from event.models import PostEvent
 from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(PostEvent)

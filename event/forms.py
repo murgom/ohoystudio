@@ -4,7 +4,7 @@ from .models import PostEvent
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 
-class PostNotCommentForm(forms.ModelForm):
+class PostEventForm(forms.ModelForm):
     title = forms.CharField(max_length=100)
     youtube_url = forms.CharField(widget=SummernoteWidget(attrs={'width': '100%', 'src':'img-responsive img-rounded'} ))
 
