@@ -25,5 +25,5 @@ class CommentForm(forms.ModelForm):
     def clean_verify_password(self):
         password1 = self.cleaned_data.get('password',None)
         if password1 != password1:
-            raise forms.ValidationError('Emails must match')
+            raise forms.ValidationError('암호가 틀렸습니다')
         return password1

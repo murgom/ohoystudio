@@ -81,9 +81,13 @@
       <!-- image9 구역 -->
   <img src="{{ post.image9.url }}" alt="">
   </div>
-  <div class="videotitle">
+  <div class="video" style=
+  "padding-left: 17px;
+   padding-right: 17px;">
+    <div class="embed-responsive embed-responsive-16by9">
       <!-- 동영상 구역 -->
   {{ post.youtube_url|safe }}
+    </div>
   </div>
     {% else %}
 

@@ -1,6 +1,7 @@
 <style>
 		html, body {margin:0;padding:0;}
 		img {display:block;border:0;}
+		ul {list-style:none;}
 		.main {width:100%;margin:0 auto;text-align:center;}
 		.main1 {}
 		.main1 img {width:100%;height:auto;}
@@ -20,6 +21,9 @@
 		.map a img {width:100%;height:auto;}
 		.videotitle {}
 		.videotitle img {width:100%;height:auto;}
+		.video {}
+		.video {width:auto;height:auto;}
+		#youtube {padding : 17;}
 		.sns {overflow:hidden;width:100%;zoom:1;}
 		.sns .left_box {float:left;width:25%;}
         .sns .left_box {float:left;width:25%;}

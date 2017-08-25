@@ -81,9 +81,13 @@
       <!-- image9 구역 -->
   <img src="{{ post.image9.url }}" alt="">
   </div>
-  <div class="videotitle">
+  <div class="video" style=
+  "padding-left: 17px;
+   padding-right: 17px;">
+    <div class="embed-responsive embed-responsive-16by9">
       <!-- 동영상 구역 -->
   {{ post.youtube_url|safe }}
+    </div>
   </div>
     {% else %}
 
@@ -121,15 +125,24 @@
           <form action="" class="form-horizontal" method="post">
             {% csrf_token %}
             <div class="form-group">
-              <label for="user">이름</label>
-              <input type="text" name="user" maxlength="200" required="" id="id_user">
-              <label for="password">패스워드</label>
-              <input type="password" name="password" maxlength="50" required="" id="id_password">
-              <label for="message">내용</label>
-              <input type="text" name="message" maxlength="200" required="" id="id_message">
+              <ul class="massage">
+                  <li>
+                      <span class="tt">Name</span>:
+                      <input type="text" class="jtxtoff" id="id_user" name="user">
+                  </li>
+                  <li>
+                      <span class="tt">Password</span>:
+                      <input type="password" class="jtxtoff" id="id_password" name="password">
+                  </li>
+                  <li>
+                      <span class="tt">Message</span>:
+                      <input type="text" class="jtxtoff" id="id_message" name="message">
+                  </li>
+              </ul>
               <button class="btn btn-large btn-block btn-primary" type="submit">작성</button>
 
             </div>
+
           </form>
 
     </div>
@@ -214,8 +227,7 @@
     {% else %}
 
     {% endif %}
-
-
+    
 <script type="text/javascript">
 var UserAgent = navigator.userAgent;
 var isMobile = UserAgent.match(/iPhone|iPod|Android|iPad/i);
