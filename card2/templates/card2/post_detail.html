@@ -183,7 +183,7 @@ var isMobile = UserAgent.match(/iPhone|iPod|Android|iPad/i);
     container: '#kakao-link-btn',
     label: '{{ post.kakao_link_label }}',
     image: {
-      src: 'http://www.kccosd.org/files/testing_image.jpg',
+      src: '{{ post.kakao_thumbnail.url }}',
       width: '300',
       height: '200'
     },
