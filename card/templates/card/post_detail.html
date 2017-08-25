@@ -69,7 +69,7 @@
 {% if post.gallery_image7 %}
   <div class="gallery">
     <!-- image7 구역 -->
-    <img src="{{ post.gallery_image7.url }}" alt="">
+    <a href="{% url "card2:post_gallery" pk=post.pk %}"><img src="{{ post.gallery_image7.url }}" alt=""></a>
   </div>
   {% else %}
 
