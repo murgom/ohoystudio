@@ -1,5 +1,5 @@
 from django.contrib import admin
-from card.models import Post, Comment
+from card.models import Post, PostGallery ,Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Post)
@@ -8,6 +8,10 @@ class PostAdmin(SummernoteModelAdmin):
 
     def post_content_str(self, post):
         return '동영상 링크 : {}'.format(str(post.youtube_url))
+
+@admin.register(PostGallery)
+class PostNotCommentAdmin(SummernoteModelAdmin):
+    list_display = ['id', 'name','gallery_image1','created_at', 'updated_at']
 
 
 @admin.register(Comment)

@@ -110,3 +110,24 @@ class PostNotComment(models.Model):
 
     def get_absolute_url(self):
         return reverse('card:post_detail',args=[self.id])
+
+class PostGallery(models.Model):
+    post = models.ForeignKey(PostNotComment)
+    name = models.CharField(max_length=100)
+    gallery_image1 = ProcessedImageField(blank=True,
+            processors=[Thumbnail(1920, 1080)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    gallery_image2 = ProcessedImageField(blank=True,
+            processors=[Thumbnail(1920, 1080)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    gallery_image3 = ProcessedImageField(blank=True,
+            processors=[Thumbnail(1920, 1080)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

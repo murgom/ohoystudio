@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from card.models import Post, Comment
+from card.models import Post, PostGallery ,Comment
 from .forms import PostForm, CommentForm
 
 def post_list(request):
@@ -18,6 +18,13 @@ def post_detail(request, pk):
     return render(request, 'card/post_detail.html', {
                                     'post': post,
                                     'form': form,
+                                    })
+
+def post_gallery(request, pk):
+    post = get_object_or_404(PostGallery, pk=pk)
+
+    return render(request, 'card2/post_gallery.html', {
+                                    'post': post,
                                     })
 
 def comment_list(request):
