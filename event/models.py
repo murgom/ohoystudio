@@ -22,77 +22,77 @@ class PostEvent(models.Model):
     call2 = models.CharField(max_length=100)
     naver_map_url = models.CharField(max_length=500)
     kakao_link_label = models.TextField(max_length=500)
-    image1 = ProcessedImageField(blank=True,
+    main_image1 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',
             )
-    image2 = ProcessedImageField(blank=True,
+    invitation_image2 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',
             )
-    image3 = ProcessedImageField(blank=True,
+    family_image3 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',
             )
-    image4 = ProcessedImageField(blank=True,
+    call1_image4 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',
             )
-    image5 = ProcessedImageField(blank=True,
+    call2_image5 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',
             )
-    image6 = ProcessedImageField(blank=True,
+    celendar_image6 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',
             )
-    image7 = ProcessedImageField(blank=True,
+    gallery_image7 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',
             )
-    image8 = ProcessedImageField(blank=True,
+    videotitle_image8 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',
             )
-    image9 = ProcessedImageField(blank=True,
+    map_image9 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',
             )
-    image10 = ProcessedImageField(blank=True,
+    map_infor_image10 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',
             )
-    image12 = ProcessedImageField(blank=True,
+    kakao_image12 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',
             )
-    image13 = ProcessedImageField(blank=True,
+    story_image13 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',
             )
-    image14 = ProcessedImageField(blank=True,
+    facebook_image14 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',
             )
-    image15 = ProcessedImageField(blank=True,
+    massage_image15 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',
             )
-    image16 = ProcessedImageField(blank=True,
+    copyright_image16 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',

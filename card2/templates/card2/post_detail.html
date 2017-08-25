@@ -5,51 +5,51 @@
 
 
 <div class="main">
-{% if post.image1 %}
+{% if post.main_image1 %}
   <!-- 메인화면 -->
   <div class="main1">
     <!-- image1 구역 -->
-    <img src="{{ post.image1.url }}" alt="">
+    <img src="{{ post.main_image1.url }}" alt="">
   </div><!-- //소개 끝 -->
 {% else %}
-123
+
 {% endif %}
 
 
-{% if post.image2 %}
+{% if post.invitation_image2 %}
   <div class="invitation">
     <!-- image2 구역 -->
-    <img src="{{ post.image2.url }}" alt="">
+    <img src="{{ post.invitation_image2.url }}" alt="">
   </div>
 {% else %}
 
 {% endif %}
 
-{% if post.image3 %}
+{% if post.family_image3 %}
   <div class="invitation">
     <!-- image3 구역 -->
-      <img src="{{ post.image3.url }}" alt="">
+      <img src="{{ post.family_image3.url }}" alt="">
   </div>
 {% else %}
 
 {% endif %}
 
 
-{% if post.image4 %}
+{% if post.call1_image4 %}
 <div class="call">
   <div class="left_box">
     <!-- image4 구역 -->
-      <a href="javascript:location.href='tel:{{ post.call1 }}'"><img src="{{ post.image4.url }}" alt=""></a>
+      <a href="javascript:location.href='tel:{{ post.call1 }}'"><img src="{{ post.call1_image4.url }}" alt=""></a>
   </div>
 {% else %}
 
 {% endif %}
 
 
-{% if post.image5 %}
+{% if post.call2_image5 %}
   <div class="right_box">
     <!-- image5 구역 -->
-    <a href="javascript:location.href='tel:{{ post.call2 }}'"><img src="{{ post.image5.url }}" alt=""></a>
+    <a href="javascript:location.href='tel:{{ post.call2 }}'"><img src="{{ post.call2_image5.url }}" alt=""></a>
   </div>
 </div>
   {% else %}
@@ -57,109 +57,109 @@
   {% endif %}
 
 
-{% if post.image6 %}
+{% if post.celendar_image6 %}
     <div class="calendar">
       <!-- image6 구역 -->
-    <img src="{{ post.image6.url }}">
+    <img src="{{ post.celendar_image6.url }}">
   </div>
   {% else %}
 
   {% endif %}
 
-{% if post.image7 %}
+{% if post.gallery_image7 %}
   <div class="gallery">
     <!-- image7 구역 -->
-    <img src="{{ post.image7.url }}" alt="">
+    <img src="{{ post.gallery_image7.url }}" alt="">
   </div>
   {% else %}
 
   {% endif %}
 
-{% if post.image9 %}
+  {% if post.videotitle_image8 %}
 
-  <div class="videotitle">
-      <!-- image9 구역 -->
-  <img src="{{ post.image9.url }}" alt="">
-  </div>
-  <div class="video" style=
-  "padding-left: 17px;
-   padding-right: 17px;">
-    <div class="embed-responsive embed-responsive-16by9">
-      <!-- 동영상 구역 -->
-  {{ post.youtube_url|safe }}
+    <div class="videotitle">
+      <!-- image8(videotitle) 구역 -->
+      <img src="{{ post.videotitle_image8.url }}" alt="">
     </div>
+    <div class="video" style=
+    "padding-left: 17px;
+     padding-right: 17px;">
+      <div class="embed-responsive embed-responsive-16by9">
+        <!-- 동영상 구역 -->
+    {{ post.youtube_url|safe }}
+      </div>
+    </div>
+    {% else %}
+    {% endif %}
+
+{% if post.map_image9 %}
+
+  <div class="map">
+      <!-- image9 구역 -->
+  <a href="{{ post.naver_map_url }}"><img src="{{ post.map_image9.url }}" alt=""></a>
   </div>
+
     {% else %}
 
     {% endif %}
 
-{% if post.image8 %}
-
-  <div class="map">
-    <!-- image8(map) 구역 -->
-    <a href="{{ post.naver_map_url }}"><img src="{{ post.image8.url }}" alt=""></a>
-  </div>
-  {% else %}
-
-  {% endif %}
-
-{% if post.image10 %}
+{% if post.map_infor_image10 %}
 
   <div class="videotitle">
     <!-- image10 구역 -->
-  <img src="{{ post.image10.url }}" alt="">
+  <img src="{{ post.map_infor_image10.url }}" alt="">
   </div>
   {% else %}
 
   {% endif %}
 
 
-{% if post.image12 %}
+{% if post.kakao_image12 %}
   <div class="sns">
     <!-- image12 구역 -->
     <div class="left_box">
       <a id="kakao-link-btn" href="javascript:KakaoDirect();">
-                    <img src="{{ post.image12.url }}"> </a>
+                    <img src="{{ post.kakao_image12.url }}"> </a>
     </div>
     {% else %}
 
     {% endif %}
 
-{% if post.image13 %}
+{% if post.story_image13 %}
     <div class="right_box">
       <!-- image13 구역 -->
     <a href="javascript:shareStory()">
-    <img src="{{ post.image13.url }}">
+    <img src="{{ post.story_image13.url }}">
   </a>
     </div>
     {% else %}
 
     {% endif %}
 
-{% if post.image14 %}
+{% if post.facebook_image14 %}
     <div class="left_box">
       <!-- image14 구역 -->
-      <a href="#"><img src="{{ post.image14.url }}" alt=""></a>
+      <a href="#"><img src="{{ post.facebook_image14.url }}" alt=""></a>
     </div>
     {% else %}
 
     {% endif %}
 
 
-{% if post.image15 %}
+{% if post.massage_image15 %}
 
     <div class="right_box">
       <!-- image15 구역 -->
-      <a href="#"><img src="{{ post.image15.url }}" alt=""></a>
+      <a href="#"><img src="{{ post.massage_image15.url }}" alt=""></a>
     </div>
 
   {% else %}
 
   {% endif %}
 
-  {% if post.image16 %}
+  {% if post.copyright_image16 %}
       <div class="ohoystdio">
-        <a href="{{ post.ohoystudio_url }}"><img src="{{ post.image16.url }}" alt=""></a>
+        <a href="{{ post.ohoystudio_url }}"><img src="{{ post.copyright_image16.url }}" alt=""></a>
       </div>
         </div>
     {% else %}
@@ -189,7 +189,7 @@ var isMobile = UserAgent.match(/iPhone|iPod|Android|iPad/i);
     },
     webButton: {
       text: '청첩장 보러가기',
-      url: '{{ post.ohoystdio_url }}' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+      url: 'https://ohoystdio.kr/card2/wedding{{ post.id }}' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
     }
   });
 
@@ -203,7 +203,7 @@ var isMobile = UserAgent.match(/iPhone|iPod|Android|iPad/i);
 // 스토리 공유 버튼을 생성합니다.
  function shareStory() {
       Kakao.Story.share({
-        url: '{{ post.ohoystdio_url }}',
+        url: 'https://ohoystdio.kr/card2/wedding{{ post.id }}',
         text: '{{ post.kakao_link_label }}'
       });
     }
