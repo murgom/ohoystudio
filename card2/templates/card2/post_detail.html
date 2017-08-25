@@ -189,7 +189,7 @@ var isMobile = UserAgent.match(/iPhone|iPod|Android|iPad/i);
     },
     webButton: {
       text: '청첩장 보러가기',
-      url: 'https://ohoystdio.kr/card2/wedding{{ post.id }}' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+      url: 'http://ohoystdio.kr/card2/wedding{{ post.id }}' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
     }
   });
 
@@ -203,7 +203,7 @@ var isMobile = UserAgent.match(/iPhone|iPod|Android|iPad/i);
 // 스토리 공유 버튼을 생성합니다.
  function shareStory() {
       Kakao.Story.share({
-        url: 'https://ohoystdio.kr/card2/wedding{{ post.id }}',
+        url: 'http://ohoystdio.kr/card2/wedding{{ post.id }}',
         text: '{{ post.kakao_link_label }}'
       });
     }
