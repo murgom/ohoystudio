@@ -28,6 +28,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+RAVEN_CONFIG = {
+    'dsn': RAVEN_DSN,
+    }
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'raven.contrib.django.raven_compat',
     'storages',
     'django_summernote',
     'imagekit',
