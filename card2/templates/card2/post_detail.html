@@ -139,7 +139,8 @@
 {% if post.facebook_image14 %}
     <div class="left_box">
       <!-- image14 구역 -->
-      <a href="#"><img src="{{ post.facebook_image14.url }}" alt=""></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=ohoystudio.kr/card2/wedding{{ post.id }}">
+        <img src="{{ post.facebook_image14.url }}" alt=""></a>
     </div>
     {% else %}
 
@@ -150,7 +151,7 @@
 
     <div class="right_box">
       <!-- image15 구역 -->
-      <a href="#"><img src="{{ post.massage_image15.url }}" alt=""></a>
+      <a href="{% url "card2:post_gallery2" pk=post.pk %}"><img src="{{ post.massage_image15.url }}" alt=""></a>
     </div>
 
   {% else %}

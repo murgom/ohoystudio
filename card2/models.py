@@ -16,7 +16,6 @@ class PostNotComment(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL)
     title = models.CharField(max_length=100)
     ohoystudio_url = models.CharField(max_length=300)
-    ohoystudio_img_src_url = models.CharField(max_length=300)
     youtube_url = models.TextField(default='')
     call1 = models.CharField(max_length=100)
     call2 = models.CharField(max_length=100)
@@ -125,6 +124,27 @@ class PostGallery(models.Model):
             format='JPEG',
             )
     gallery_image3 = ProcessedImageField(blank=True,
+            processors=[Thumbnail(1920, 1080)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class PostGallery2(models.Model):
+    post = models.ForeignKey(PostNotComment)
+    name = models.CharField(max_length=100)
+    message_image1 = ProcessedImageField(blank=True,
+            processors=[Thumbnail(1920, 1080)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    message_image2 = ProcessedImageField(blank=True,
+            processors=[Thumbnail(1920, 1080)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    message_image3 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',
