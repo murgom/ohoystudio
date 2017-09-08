@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import PostNotComment
+from .models import InfomationImage
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 
@@ -9,5 +9,5 @@ class PostNotCommentForm(forms.ModelForm):
     youtube_url = forms.CharField(widget=SummernoteWidget(attrs={'width': '100%', 'src':'img-responsive img-rounded'} ))
 
     class Meta:
-        model = PostNotComment
+        model = InfomationImage
         fields = ('title','youtube_url',)

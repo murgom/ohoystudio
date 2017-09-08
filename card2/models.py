@@ -12,7 +12,7 @@ def get_image_path(instance, filename):
     return os.path.join('card2', "image2_%s" % str(instance), filename)
 
 
-class PostNotComment(models.Model):
+class InfomationImage(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL)
     title = models.CharField(max_length=100)
     ohoystudio_url = models.CharField(max_length=300)
@@ -110,8 +110,8 @@ class PostNotComment(models.Model):
     def get_absolute_url(self):
         return reverse('card:post_detail',args=[self.id])
 
-class PostGallery(models.Model):
-    post = models.ForeignKey(PostNotComment)
+class GalleryImage(models.Model):
+    post = models.ForeignKey(InfomationImage)
     name = models.CharField(max_length=100)
     gallery_image1 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
@@ -131,8 +131,8 @@ class PostGallery(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-class PostGallery2(models.Model):
-    post = models.ForeignKey(PostNotComment)
+class SmsImage(models.Model):
+    post = models.ForeignKey(InfomationImage)
     name = models.CharField(max_length=100)
     message_image1 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],

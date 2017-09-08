@@ -69,7 +69,7 @@
 {% if post.gallery_image7 %}
   <div class="gallery">
     <!-- image7 구역 -->
-    <a href="{% url "card2:post_gallery" pk=post.pk %}"><img src="{{ post.gallery_image7.url }}" alt=""></a>
+    <a href="{% url "card2:gallery_image" pk=post.pk %}"><img src="{{ post.gallery_image7.url }}" alt=""></a>
   </div>
   {% else %}
 
@@ -151,7 +151,7 @@
 
     <div class="right_box">
       <!-- image15 구역 -->
-      <a href="{% url "card2:post_gallery2" pk=post.pk %}"><img src="{{ post.massage_image15.url }}" alt=""></a>
+      <a href="{% url "card2:sms_image" pk=post.pk %}"><img src="{{ post.massage_image15.url }}" alt=""></a>
     </div>
 
   {% else %}

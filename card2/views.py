@@ -1,28 +1,28 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from card2.models import PostNotComment, PostGallery, PostGallery2
+from card2.models import InfomationImage, GalleryImage, SmsImage
 from .forms import PostNotCommentForm
 
 def post_list(request):
-    qs = PostNotComment.objects.all().order_by('-id')
+    qs = InfomationImage.objects.all().order_by('-id')
 
 def post_detail(request, pk):
-    post = get_object_or_404(PostNotComment, pk=pk)
+    post = get_object_or_404(InfomationImage, pk=pk)
 
     return render(request, 'card2/post_detail.html', {
                                     'post': post,
                                     })
 
-def post_gallery(request, pk):
-    post = get_object_or_404(PostGallery, pk=pk)
+def gallery_image(request, pk):
+    post = get_object_or_404(GalleryImage, pk=pk)
 
-    return render(request, 'card2/post_gallery.html', {
+    return render(request, 'card2/gallery_image.html', {
                                     'post': post,
                                     })
 
-def post_gallery2(request, pk):
-    post = get_object_or_404(PostGallery2, pk=pk)
+def sms_image(request, pk):
+    post = get_object_or_404(SmsImage, pk=pk)
 
-    return render(request, 'card2/post_gallery2.html', {
+    return render(request, 'card2/sms_image.html', {
                                     'post': post,
                                     })
