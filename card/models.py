@@ -117,10 +117,12 @@ class Comment(models.Model):
     # post_id 라는 필드가 생김 외래키의 영향
     author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True  ,blank=True)
     user = models.CharField(max_length=200)
-    password = models.CharField(max_length=50)
+    password1 = models.CharField(max_length=50)
+    password2 = models.CharField(max_length=50, blank=True)
     message = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
 
 class PostGallery(models.Model):
     post = models.ForeignKey(Post)
@@ -136,6 +138,27 @@ class PostGallery(models.Model):
             format='JPEG',
             )
     gallery_image3 = ProcessedImageField(blank=True,
+            processors=[Thumbnail(1920, 1080)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class SmsImage(models.Model):
+    post = models.ForeignKey(Post)
+    name = models.CharField(max_length=100)
+    message_image1 = ProcessedImageField(blank=True,
+            processors=[Thumbnail(1920, 1080)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    message_image2 = ProcessedImageField(blank=True,
+            processors=[Thumbnail(1920, 1080)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    message_image3 = ProcessedImageField(blank=True,
             processors=[Thumbnail(1920, 1080)],
             upload_to=get_image_path,
             format='JPEG',

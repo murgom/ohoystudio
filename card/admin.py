@@ -1,5 +1,5 @@
 from django.contrib import admin
-from card.models import Post, PostGallery ,Comment
+from card.models import Post, PostGallery ,Comment, SmsImage
 from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Post)
@@ -16,8 +16,8 @@ class PostNotCommentAdmin(SummernoteModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ['id', 'user','message','password','post_title_str','comment_content_len']
-
+    list_display = ['id', 'user','message','password1','post_title_str','comment_content_len']
+    prepopulated_fields = { 'password2': ['password1'] }
     def post_title_str(self,comment):
         return '{} 게시물 글'.format(str(comment.post.title))
 
@@ -27,3 +27,7 @@ class CommentAdmin(admin.ModelAdmin):
     def get_queryset(self,request):
         qs = super().get_queryset(request)
         return qs.select_related('post')
+
+@admin.register(SmsImage)
+class PostNotCommentAdmin(SummernoteModelAdmin):
+    list_display = ['id', 'name','message_image1','created_at', 'updated_at']

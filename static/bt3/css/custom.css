@@ -24,6 +24,15 @@
 		.video {}
 		.video {width:auto;height:auto;}
 		#youtube {padding : 17;}
+		#date {float: right;;}
+		#commentname {float: left;}
+		#message_user {float: left; padding: 3px 3px 3px 3px; overflow: hidden;}
+		#message_passward {float: left; padding: 3px 3px 3px 3px; overflow: hidden;}
+		#message_input {float: left; padding: 3px 3px 3px 3px; overflow: hidden;}
+		#massage_form {padding: 10px;}
+		#id_user {border: 0px; background-color: #DCDCDC;}
+		#id_password1 {border: 0px; background-color: #DCDCDC;}
+		#id_message {border: 0px; background-color: #DCDCDC;}
 		.sns {overflow:hidden;width:100%;zoom:1;}
 		.sns .left_box {float:left;width:25%;}
         .sns .left_box {float:left;width:25%;}

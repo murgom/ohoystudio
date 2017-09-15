@@ -2,10 +2,41 @@
 {% load imagekit %}
 
 {% block content %}
-<h1>댓글 삭제</h1>
+{% if messages %}
+<div class="container">
+
+
+  {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+    {{ message.tags }}
+    {{ message.message }}
+  {% endfor %}
+
+  </div>
+</div>
+{% endif %}
+<div class="text-center">
+  <div class="col-xs-12 col-sm-4 col-sm-offset-4" style="background: #DCDCDC;
+                                                         border: 1px solid;
+                                                         border-radius: 4px;">
+<h2>댓글 삭제</h2>
 <form action="" class="form-horizontal" method="post">
   {% csrf_token %}
-{{form.as_p}}
-<button class="btn btn-large btn-block btn-primary" type="submit">확인</button>
+<p><input type="hidden" name="user" value="{{form.instance.user}}" maxlength="200" required="" id="id_user"></p>
+
+<p><input type="hidden" name="password1" value="{{form.instance.password1}}" required="" id="id_password1"></p>
+
+<p><input type="hidden" name="message" value="{{form.instance.message}}" maxlength="200" id="id_message"></p>
+
+<p><label for="id_password2">패스워드 입력 : </label>
+  <input type="password" name="password2" required="" id="id_password2"></p>
+
+<p>
+  <button class="btn btn-large btn-block btn-primary" type="submit">확인</button>
+</p>
 </form>
+<a href="{{ comment.post }}">뒤로</a>
+</div>
+</div>
+
 {% endblock %}
