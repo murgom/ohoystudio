@@ -101,6 +101,11 @@ class Post(models.Model):
             upload_to=get_image_path,
             format='JPEG',
             )
+    kakao_thumbnail = ProcessedImageField(blank=True,
+            processors=[Thumbnail(1920, 1080)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
