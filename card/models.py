@@ -170,3 +170,15 @@ class SmsImage(models.Model):
             )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+class PreviewImage(models.Model):
+    post = models.ForeignKey(Post)
+    name = models.CharField(max_length=100)
+    preview_image = ProcessedImageField(blank=True,
+            processors=[Thumbnail(1920, 1080)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

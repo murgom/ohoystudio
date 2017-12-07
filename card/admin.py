@@ -1,5 +1,5 @@
 from django.contrib import admin
-from card.models import Post, PostGallery ,Comment, SmsImage
+from card.models import Post, PostGallery ,Comment, SmsImage, PreviewImage
 from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Post)
@@ -31,3 +31,7 @@ class CommentAdmin(admin.ModelAdmin):
 @admin.register(SmsImage)
 class PostNotCommentAdmin(SummernoteModelAdmin):
     list_display = ['id', 'name','message_image1','created_at', 'updated_at']
+
+@admin.register(PreviewImage)
+class PostNotCommentAdmin(SummernoteModelAdmin):
+    list_display = ['id', 'name','preview_image','created_at', 'updated_at']
