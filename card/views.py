@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from card.models import Post, PostGallery ,Comment, SmsImage, PreviewImage
+from card.models import Post, PostGallery ,Comment, SmsImage
 from .forms import PostForm, CommentForm, CommentDeleteForm
 
 from django.contrib import messages
@@ -36,12 +36,6 @@ def sms_image(request, pk):
                                     'post': post,
                                     })
 
-def preview_image(request, pk):
-    post = get_object_or_404(PreviewImage, pk=pk)
-
-    return render(request, 'card/preview_image.html', {
-                                    'post': post,
-                                    })
 
 def comment_list(request):
     qs = Comment.objects.all().order_by('-id').select_related('post')

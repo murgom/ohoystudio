@@ -9,6 +9,4 @@ urlpatterns = [
     url(r'^comments/$', views.comment_list, name='comment_list'),
 
     url(r'^comment/(?P<pk>\d+)/delete/$', views.comment_delete, name='comment_delete'),
-
-    url(r'^preview/(?P<pk>\d+)/$', views.preview_image, name='preview_image'),
 ]
