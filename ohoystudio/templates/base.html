@@ -2,7 +2,7 @@
 {% load staticfiles %}
 <html>
   <head>
-    <meta property="og:image" content="{% url "card:preview_image" pk=post.pk %}">
+    <meta property="og:image" content="http://ohoystudio.kr{% url "card:preview_image" pk=post.pk %}">
     <meta charset="utf-8">
     <link href="{% static 'bt3/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'bt3/css/bootstrap.css' %}" rel="stylesheet">
