@@ -22,92 +22,92 @@ class Post(models.Model):
     naver_map_url = models.CharField(max_length=500)
     kakao_link_label = models.TextField(max_length=500)
     main_image1 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     invitation_image2 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     family_image3 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     call1_image4 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     call2_image5 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     celendar_image6 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     gallery_image7 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     videotitle_image8 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     map_image9 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     map_infor_image10 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     message_title_image11 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     kakao_image12 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     story_image13 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     facebook_image14 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     massage_image15 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     copyright_image16 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     kakao_thumbnail = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     preview_image = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
@@ -133,22 +133,26 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ['-id']
+        #id 역순서 배치
+
 
 class PostGallery(models.Model):
     post = models.ForeignKey(Post)
     name = models.CharField(max_length=100)
     gallery_image1 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     gallery_image2 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     gallery_image3 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
@@ -159,17 +163,17 @@ class SmsImage(models.Model):
     post = models.ForeignKey(Post)
     name = models.CharField(max_length=100)
     message_image1 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     message_image2 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
     message_image3 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(1920, 1080)],
+            processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
