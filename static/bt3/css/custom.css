@@ -29,10 +29,10 @@
 		#message_user {float: left; padding: 3px 3px 3px 3px; overflow: hidden;}
 		#message_passward {float: left; padding: 3px 3px 3px 3px; overflow: hidden;}
 		#message_input {float: left; padding: 3px 3px 3px 3px; overflow: hidden;}
-		#massage_form {padding: 10px;}
-		#id_user {border: 0px; background-color: #DCDCDC;}
-		#id_password1 {border: 0px; background-color: #DCDCDC;}
-		#id_message {border: 0px; background-color: #DCDCDC;}
+		#massage_form {padding: 10px;font-family: 'Noto Sans', sans-serif;}
+		#id_user {border: 0px; background-color: white;}
+		#id_password1 {border: 0px; background-color: white;}
+		#id_message {border: 0px; background-color: white;}
 		.sns {overflow:hidden;width:100%;zoom:1;}
 		.sns .left_box {float:left;width:25%;}
         .sns .left_box {float:left;width:25%;}
@@ -42,4 +42,6 @@
         .sns div a img {width:100%;height:auto;}
 		.ohoystdio {}
 		.ohoystdio img {width:100%;height:auto;}
+		#more_button {color:black;background-color:white;font-family: 'Noto Sans', sans-serif;}
+		#Send_message {color:white;background-color:#3a3a3a;font-family: 'Noto Sans', sans-serif;}
 	</style>
