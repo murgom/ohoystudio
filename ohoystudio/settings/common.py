@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'storages',
     'django_summernote',
     'imagekit',
+    'sample',
     'card',
     'card2',
     'event',

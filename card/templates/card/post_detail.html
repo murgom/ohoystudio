@@ -228,10 +228,14 @@ $('#myModal').on('shown.bs.modal', function () {
       <a class="dropdown-toggle" href="#" data-toggle="dropdown">
         <img src="{{ post.facebook_image14.url }}" alt=""></a>
       <div class="dropdown-menu dropdown-menu-right" id="dropdown_menu">
-                <a href="javascript:shareStory()">카카오스토리</a>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=ohoystudio.kr/card/wedding{{ post.id }}">페이스북</a>
-                <a href="javascript:share_tw()">트위터</a>
-                <a href="#">인스타그램</a>
+                <a href="javascript:shareStory()">
+                  <img src="https://s3.ap-northeast-2.amazonaws.com/ohoystudio/Icon/kakaostory.png">카카오스토리</a>
+
+                <a href="https://www.facebook.com/sharer/sharer.php?u=ohoystudio.kr/wedding{{ post.id }}">
+                  <img src="https://s3.ap-northeast-2.amazonaws.com/ohoystudio/Icon/facebook.png">페이스북</a>
+
+                <a href="javascript:share_tw()">
+                  <img src="https://s3.ap-northeast-2.amazonaws.com/ohoystudio/Icon/twitter.png">트위터</a>
       </div>
     </div>
     </div>

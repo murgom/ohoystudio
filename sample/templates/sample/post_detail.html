@@ -1,4 +1,4 @@
-{% extends 'card2/base.html' %}
+{% extends 'sample/base.html' %}
 {% load imagekit %}
 
 {% block content %}
@@ -69,7 +69,7 @@
 {% if post.gallery_image7 %}
   <div class="gallery">
     <!-- image7 구역 -->
-    <a href="{% url "card2:gallery_image" pk=post.pk %}"><img src="{{ post.gallery_image7.url }}" alt=""></a>
+    <a href="{% url "sample:gallery_image" pk=post.pk %}"><img src="{{ post.gallery_image7.url }}" alt=""></a>
   </div>
   {% else %}
 
@@ -128,7 +128,7 @@
 {% if post.story_image13 %}
     <div class="right_box">
       <!-- image13 구역 -->
-      <a href="{% url "card2:sms_image" pk=post.pk %}">
+      <a href="{% url "sample:sms_image" pk=post.pk %}">
         <img src="{{ post.story_image13.url }}" alt=""></a>
     </div>
     {% else %}

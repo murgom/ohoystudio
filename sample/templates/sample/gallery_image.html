@@ -1,0 +1,38 @@
+{% extends 'sample/base.html' %}
+{% load imagekit %}
+
+{% block content %}
+<body leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+ <tbody>
+   <tr>
+         <td align="center">
+           {% if post.gallery_image1 %}
+           <img src="{{ post.gallery_image1.url }}" style="width:100%;">
+           {% else %}
+
+           {% endif %}
+       </td>
+     </tr>
+
+     <tr>
+         <td align="center">
+           {% if post.gallery_image2 %}
+           <img src="{{ post.gallery_image2.url }}" style="width:100%;">
+           {% else %}
+ </td>
+           {% endif %}
+           <td align="center">
+             {% if post.gallery_image3 %}
+             <img src="{{ post.gallery_image3.url }}" style="width:100%;">
+             {% else %}
+
+             {% endif %}
+
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+</body>
+{% endblock %}
