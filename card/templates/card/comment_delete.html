@@ -16,10 +16,8 @@
 </div>
 {% endif %}
 <div class="text-center">
-  <div class="col-xs-12 col-sm-4 col-sm-offset-4" style="background: #DCDCDC;
-                                                         border: 1px solid;
-                                                         border-radius: 4px;">
-<h2>댓글 삭제</h2>
+
+<h3>댓글 삭제</h3>
 <form action="" class="form-horizontal" method="post">
   {% csrf_token %}
 <p><input type="hidden" name="user" value="{{form.instance.user}}" maxlength="200" required="" id="id_user"></p>
@@ -28,15 +26,22 @@
 
 <p><input type="hidden" name="message" value="{{form.instance.message}}" maxlength="200" id="id_message"></p>
 
-<p><label for="id_password2">패스워드 입력 : </label>
-  <input type="password" name="password2" required="" id="id_password2"></p>
+<p><label for="id_password2">패스워드입력 : </label>
+  <input type="password" name="password2" 
+         required="" 
+         id="id_password2"></p>
 
 <p>
-  <button class="btn btn-large btn-block btn-primary" type="submit">확인</button>
+      <div style="padding:10px;">
+          <button id="delete_message" class="btn btn-large btn-block black-background white" type="submit"
+          value="{{ request.GET.next }}">확인</button>
+      </div>
 </p>
 </form>
-<input type=button value="되돌아가기" onClick="history.back();">
-</div>
+<button class="btn btn-large btn-block black-background white"
+        id="previous_page" 
+        value="request.path"
+        onClick="history.back();">previous page</button>
 </div>
 
 {% endblock %}

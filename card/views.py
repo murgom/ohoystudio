@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, resolve_url
 from django.http import HttpResponse
 from card.models import Post, PostGallery ,Comment, SmsImage
-from .forms import PostForm, CommentForm, CommentDeleteForm
+from .forms import PostForm, CommentForm, CommentDeleteForm 
+from django.views.generic import DeleteView
 
 from django.contrib import messages
 
@@ -57,4 +58,6 @@ def comment_delete(request, pk):
             messages.warning(request, '패스워드가 다릅니다')
     else:
         form = CommentDeleteForm(instance=comment)
-    return render(request, 'card/comment_delete.html', {'form': form})
+    return render(request, 'card/comment_delete.html', {
+                                    'form': form,
+                                    })

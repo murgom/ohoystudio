@@ -34,14 +34,17 @@
 		#id_password1 {border: 0px; background-color: white;}
 		#id_message {border: 0px; background-color: white;}
 		.sns {overflow:hidden;width:100%;zoom:1;}
-		.sns .left_box {float:left;width:25%;}
-        .sns .left_box {float:left;width:25%;}
-        .sns .right_box {float:left;width:25%;}
-        .sns .right_box {float:left;width:25%;}
+		.sns .left_box {float:left;width:33%;}
+        .sns .left_box {float:left;width:33%;}
+        .sns .right_box {float:left;width:33%;}
         .sns div a {display:block;}
         .sns div a img {width:100%;height:auto;}
 		.ohoystdio {}
 		.ohoystdio img {width:100%;height:auto;}
 		#more_button {color:black;background-color:white;font-family: 'Noto Sans', sans-serif;}
 		#Send_message {color:white;background-color:#3a3a3a;font-family: 'Noto Sans', sans-serif;}
+		#delete_message {color:white;background-color:#3a3a3a;font-family: 'Noto Sans', sans-serif;}
+		#previous_page {color:black;background-color:white;font-family: 'Noto Sans', sans-serif;}
+		#drop_up {position: absolute;}
+		#dropdown_menu a {padding: 15px;}
 	</style>

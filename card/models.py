@@ -4,6 +4,7 @@ from django.utils import timezone
 from imagekit.models import ProcessedImageField
 from imagekit.processors import Thumbnail
 from django.contrib.auth.models import User
+from django.urls import reverse 
 
 import uuid
 import os

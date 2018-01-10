@@ -2,7 +2,11 @@
 {% load imagekit %}
 
 {% block content %}
-
+<script>
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
 
 <div class="main">
 {% if post.main_image1 %}
@@ -174,9 +178,11 @@
             </li>
 
             <li style="overflow: hidden">
-                      <p style="float: left;">{{comments.message}}</p>
-                <a style="float: right;" href="{% url "card:comment_delete" pk=comments.pk %}">
-                  <img src="https://s3.ap-northeast-2.amazonaws.com/ohoystudio/Icon/delite.png"/></a>
+                <p style="float: left;">{{comments.message}}</p>
+                <a style="float: right;" 
+                   href="{% url "card:comment_delete" pk=comments.pk %}"
+                   data-message="정말 삭제하시겠습니까?">
+                <img src="https://s3.ap-northeast-2.amazonaws.com/ohoystudio/Icon/delite.png"/></a>
             </li>
 
       </div>
@@ -205,38 +211,34 @@
 
       {% endif %}
 
-  {% if post.story_image13 %}
-      <div class="right_box">
-        <!-- image13 구역 -->
-      <a href="javascript:shareStory()">
-      <img src="{{ post.story_image13.url }}">
-    </a>
-      </div>
-      {% else %}
-
-      {% endif %}
-
-  {% if post.facebook_image14 %}
-      <div class="left_box">
-        <!-- image14 구역 -->
-        <a href="https://www.facebook.com/sharer/sharer.php?u=ohoystudio.kr/card/wedding{{ post.id }}">
-          <img src="{{ post.facebook_image14.url }}" alt=""></a>
-      </div>
-      {% else %}
-
-      {% endif %}
-
-
-  {% if post.massage_image15 %}
-
-      <div class="right_box">
-        <!-- image15 구역 -->
-        <a href="{% url "card:sms_image" pk=post.pk %}"><img src="{{ post.massage_image15.url }}" alt=""></a>
-      </div>
-
+{% if post.story_image13 %}
+    <div class="right_box">
+      <!-- image13 구역 -->
+      <a href="{% url "card:sms_image" pk=post.pk %}">
+        <img src="{{ post.story_image13.url }}" alt=""></a>
+    </div>
     {% else %}
 
     {% endif %}
+
+{% if post.facebook_image14 %}
+    <div class="left_box">
+      <!-- image14 구역 -->
+      <div class="dropup" id="drop_up">
+      <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+        <img src="{{ post.facebook_image14.url }}" alt=""></a>
+      <div class="dropdown-menu dropdown-menu-right" id="dropdown_menu">
+                <a href="javascript:shareStory()">카카오스토리</a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=ohoystudio.kr/card/wedding{{ post.id }}">페이스북</a>
+                <a href="javascript:share_tw()">트위터</a>
+                <a href="#">인스타그램</a>
+      </div>
+    </div>
+    </div>
+    {% else %}
+
+    {% endif %}
+
 
     {% if post.copyright_image16 %}
         <div class="ohoystdio">
@@ -246,6 +248,8 @@
       {% else %}
 
       {% endif %}
+      <a data-toggle="modal" data-target="#exampleModal">123</a>
+
 <script type="text/javascript">
 var UserAgent = navigator.userAgent;
 var isMobile = UserAgent.match(/iPhone|iPod|Android|iPad/i);
@@ -288,6 +292,47 @@ var isMobile = UserAgent.match(/iPhone|iPod|Android|iPad/i);
           }
 
 </script>
+<script type="text/javascript">
+  function share_tw(){
+  var content = "{{ post.title }}";
+  var link = "http://ohoystudio.kr/card/wedding{{ post.id }}";
+  var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";
+  var wp = window.open("http://twitter.com/share?url=" + encodeURIComponent(link) + "&text=" + encodeURIComponent(content), 'twitter', popOption);
+  if ( wp ) {
+    wp.focus();
+  }    
+}
+</script>
 
-</div>
+
+
+
+
+<!-- </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">공유하기</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          카카오톡 공유
+        </p>
+        <p>
+          라인 공유
+        </p>
+        <p>
+          페이스북 공유
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+      </div>
+    </div>
+  </div>
+</div> -->
 {% endblock %}

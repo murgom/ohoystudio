@@ -4,10 +4,11 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(InfomationImage)
 class PostNotCommentAdmin(SummernoteModelAdmin):
-    list_display = ['id', 'title','post_content_str','main_image1','created_at', 'updated_at']
+    list_display = ['id', 'title','post_content_str','created_at', 'updated_at']
+    list_display_links = ('title',)
 
     def post_content_str(self, post):
-        return '동영상 링크 : {}'.format(str(post.youtube_url))
+        return '청첩장 이름 : {}'.format(str(post.title))
 
 @admin.register(GalleryImage)
 class PostNotCommentAdmin(SummernoteModelAdmin):

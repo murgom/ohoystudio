@@ -17,7 +17,7 @@ class PostNotCommentAdmin(SummernoteModelAdmin):
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ['id', 'user','message','password1','post_title_str','comment_content_len']
-    prepopulated_fields = { 'password2': ['password1'] }
+    # prepopulated_fields = { 'password2': ['password1'] }
     def post_title_str(self,comment):
         return '{} 게시물 글'.format(str(comment.post.title))
 

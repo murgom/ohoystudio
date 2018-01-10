@@ -128,9 +128,8 @@
 {% if post.story_image13 %}
     <div class="right_box">
       <!-- image13 구역 -->
-    <a href="javascript:shareStory()">
-    <img src="{{ post.story_image13.url }}">
-  </a>
+      <a href="{% url "card2:sms_image" pk=post.pk %}">
+        <img src="{{ post.story_image13.url }}" alt=""></a>
     </div>
     {% else %}
 
@@ -139,24 +138,22 @@
 {% if post.facebook_image14 %}
     <div class="left_box">
       <!-- image14 구역 -->
-      <a href="https://www.facebook.com/sharer/sharer.php?u=ohoystudio.kr/card2/wedding{{ post.id }}">
+      <div class="dropup" id="drop_up">
+      <a class="dropdown-toggle" href="#" data-toggle="dropdown">
         <img src="{{ post.facebook_image14.url }}" alt=""></a>
+      <div class="dropdown-menu dropdown-menu-right" id="dropdown_menu">
+                <a href="javascript:shareStory()">카카오스토리</a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=ohoystudio.kr/card2/wedding{{ post.id }}">페이스북</a>
+                <a href="javascript:share_tw()">트위터</a>
+                <a href="#">인스타그램</a>
+      </div>
+    </div>
     </div>
     {% else %}
 
     {% endif %}
 
 
-{% if post.massage_image15 %}
-
-    <div class="right_box">
-      <!-- image15 구역 -->
-      <a href="{% url "card2:sms_image" pk=post.pk %}"><img src="{{ post.massage_image15.url }}" alt=""></a>
-    </div>
-
-  {% else %}
-
-  {% endif %}
 
   {% if post.copyright_image16 %}
       <div class="ohoystdio">
@@ -209,6 +206,17 @@ var isMobile = UserAgent.match(/iPhone|iPod|Android|iPad/i);
       });
     }
 
+</script>
+<script type="text/javascript">
+  function share_tw(){
+  var content = "{{ post.title }}";
+  var link = "http://ohoystudio.kr/card2/wedding{{ post.id }}";
+  var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";
+  var wp = window.open("http://twitter.com/share?url=" + encodeURIComponent(link) + "&text=" + encodeURIComponent(content), 'twitter', popOption);
+  if ( wp ) {
+    wp.focus();
+  }    
+}
 </script>
 </div>
 {% endblock %}
