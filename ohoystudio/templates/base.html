@@ -25,8 +25,71 @@
 </script>
   </head>
   <body>
+<div class="main">
+{% if post.main_image1 %}
+  <!-- 메인화면 -->
+  <div class="main1">
+    <!-- image1 구역 -->
+    <img src="{{ post.main_image1.url }}" alt="">
+  </div><!-- //소개 끝 -->
+{% else %}
+
+{% endif %}
+
+
+{% if post.invitation_image2 %}
+  <div class="invitation">
+    <!-- image2 구역 -->
+    <img src="{{ post.invitation_image2.url }}" alt="">
+  </div>
+{% else %}
+
+{% endif %}
+
+{% if post.family_image3 %}
+  <div class="invitation">
+    <!-- image3 구역 -->
+      <img src="{{ post.family_image3.url }}" alt="">
+  </div>
+{% else %}
+
+{% endif %}
+
+
+{% if post.call1_image4 %}
+<div class="call">
+  <div class="left_box">
+    <!-- image4 구역 -->
+      <a href="javascript:location.href='tel:{{ post.call1 }}'"><img src="{{ post.call1_image4.url }}" alt=""></a>
+  </div>
+{% else %}
+
+{% endif %}
+
+
+{% if post.call2_image5 %}
+  <div class="right_box">
+    <!-- image5 구역 -->
+    <a href="javascript:location.href='tel:{{ post.call2 }}'"><img src="{{ post.call2_image5.url }}" alt=""></a>
+  </div>
+</div>
+  {% else %}
+
+  {% endif %}
+
+
+{% if post.celendar_image6 %}
+    <div class="calendar">
+      <!-- image6 구역 -->
+    <img src="{{ post.celendar_image6.url }}">
+  </div>
+  {% else %}
+
+  {% endif %}
     {% block content %}
     {% endblock %}
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="{% static 'bt3/js/bootstrap.min.js' %}"></script>
     <script src="{% static "bt3/jquery/dist/jquery.min.js" %}"></script>

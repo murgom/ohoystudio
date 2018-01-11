@@ -8,67 +8,7 @@ $('#myModal').on('shown.bs.modal', function () {
 })
 </script>
 
-<div class="main">
-{% if post.main_image1 %}
-  <!-- 메인화면 -->
-  <div class="main1">
-    <!-- image1 구역 -->
-    <img src="{{ post.main_image1.url }}" alt="">
-  </div><!-- //소개 끝 -->
-{% else %}
 
-{% endif %}
-
-
-{% if post.invitation_image2 %}
-  <div class="invitation">
-    <!-- image2 구역 -->
-    <img src="{{ post.invitation_image2.url }}" alt="">
-  </div>
-{% else %}
-
-{% endif %}
-
-{% if post.family_image3 %}
-  <div class="invitation">
-    <!-- image3 구역 -->
-      <img src="{{ post.family_image3.url }}" alt="">
-  </div>
-{% else %}
-
-{% endif %}
-
-
-{% if post.call1_image4 %}
-<div class="call">
-  <div class="left_box">
-    <!-- image4 구역 -->
-      <a href="javascript:location.href='tel:{{ post.call1 }}'"><img src="{{ post.call1_image4.url }}" alt=""></a>
-  </div>
-{% else %}
-
-{% endif %}
-
-
-{% if post.call2_image5 %}
-  <div class="right_box">
-    <!-- image5 구역 -->
-    <a href="javascript:location.href='tel:{{ post.call2 }}'"><img src="{{ post.call2_image5.url }}" alt=""></a>
-  </div>
-</div>
-  {% else %}
-
-  {% endif %}
-
-
-{% if post.celendar_image6 %}
-    <div class="calendar">
-      <!-- image6 구역 -->
-    <img src="{{ post.celendar_image6.url }}">
-  </div>
-  {% else %}
-
-  {% endif %}
 
 {% if post.gallery_image7 %}
   <div class="gallery">
@@ -199,22 +139,21 @@ $('#myModal').on('shown.bs.modal', function () {
   {% else %}
 
   {% endif %}
+{% if post.kakao_image12 %}
+  <div class="sns">
+    <!-- image12 구역 -->
+    <div class="left_box">
+      <a id="kakao-link-btn" href="javascript:KakaoDirect();">
+                    <img src="{{ post.kakao_image12.url }}"> </a>
+    </div>
+    {% else %}
 
-  {% if post.kakao_image12 %}
-    <div class="sns">
-      <!-- image12 구역 -->
-      <div class="left_box">
-        <a id="kakao-link-btn" href="javascript:KakaoDirect();">
-                      <img src="{{ post.kakao_image12.url }}"> </a>
-      </div>
-      {% else %}
-
-      {% endif %}
+    {% endif %}
 
 {% if post.story_image13 %}
     <div class="right_box">
       <!-- image13 구역 -->
-      <a href="{% url "card:sms_image" pk=post.pk %}">
+      <a href="{% url "card2:sms_image" pk=post.pk %}">
         <img src="{{ post.story_image13.url }}" alt=""></a>
     </div>
     {% else %}
@@ -231,7 +170,7 @@ $('#myModal').on('shown.bs.modal', function () {
                 <a href="javascript:shareStory()">
                   <img src="https://s3.ap-northeast-2.amazonaws.com/ohoystudio/Icon/kakaostory.png">카카오스토리</a>
 
-                <a href="https://www.facebook.com/sharer/sharer.php?u=ohoystudio.kr/wedding{{ post.id }}">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=ohoystudio.kr/card/wedding{{ post.id }}">
                   <img src="https://s3.ap-northeast-2.amazonaws.com/ohoystudio/Icon/facebook.png">페이스북</a>
 
                 <a href="javascript:share_tw()">
@@ -244,15 +183,17 @@ $('#myModal').on('shown.bs.modal', function () {
     {% endif %}
 
 
-    {% if post.copyright_image16 %}
-        <div class="ohoystdio">
-          <a href="{{ post.ohoystudio_url }}"><img src="{{ post.copyright_image16.url }}" alt=""></a>
-        </div>
-          </div>
-      {% else %}
 
-      {% endif %}
-      <a data-toggle="modal" data-target="#exampleModal">123</a>
+  {% if post.copyright_image16 %}
+      <div class="ohoystdio">
+        <a href="{{ post.ohoystudio_url }}"><img src="{{ post.copyright_image16.url }}" alt=""></a>
+      </div>
+        </div>
+    {% else %}
+
+    {% endif %}
+
+<a data-toggle="modal" data-target="#exampleModal">123</a>
 
 <script type="text/javascript">
 var UserAgent = navigator.userAgent;

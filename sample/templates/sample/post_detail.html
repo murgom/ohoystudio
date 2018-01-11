@@ -4,67 +4,7 @@
 {% block content %}
 
 
-<div class="main">
-{% if post.main_image1 %}
-  <!-- 메인화면 -->
-  <div class="main1">
-    <!-- image1 구역 -->
-    <img src="{{ post.main_image1.url }}" alt="">
-  </div><!-- //소개 끝 -->
-{% else %}
 
-{% endif %}
-
-
-{% if post.invitation_image2 %}
-  <div class="invitation">
-    <!-- image2 구역 -->
-    <img src="{{ post.invitation_image2.url }}" alt="">
-  </div>
-{% else %}
-
-{% endif %}
-
-{% if post.family_image3 %}
-  <div class="invitation">
-    <!-- image3 구역 -->
-      <img src="{{ post.family_image3.url }}" alt="">
-  </div>
-{% else %}
-
-{% endif %}
-
-
-{% if post.call1_image4 %}
-<div class="call">
-  <div class="left_box">
-    <!-- image4 구역 -->
-      <a href="javascript:location.href='tel:{{ post.call1 }}'"><img src="{{ post.call1_image4.url }}" alt=""></a>
-  </div>
-{% else %}
-
-{% endif %}
-
-
-{% if post.call2_image5 %}
-  <div class="right_box">
-    <!-- image5 구역 -->
-    <a href="javascript:location.href='tel:{{ post.call2 }}'"><img src="{{ post.call2_image5.url }}" alt=""></a>
-  </div>
-</div>
-  {% else %}
-
-  {% endif %}
-
-
-{% if post.celendar_image6 %}
-    <div class="calendar">
-      <!-- image6 구역 -->
-    <img src="{{ post.celendar_image6.url }}">
-  </div>
-  {% else %}
-
-  {% endif %}
 
 {% if post.gallery_image7 %}
   <div class="gallery">
@@ -113,7 +53,6 @@
 
   {% endif %}
 
-
 {% if post.kakao_image12 %}
   <div class="sns">
     <!-- image12 구역 -->
@@ -128,7 +67,7 @@
 {% if post.story_image13 %}
     <div class="right_box">
       <!-- image13 구역 -->
-      <a href="{% url "sample:sms_image" pk=post.pk %}">
+      <a href="{% url "card2:sms_image" pk=post.pk %}">
         <img src="{{ post.story_image13.url }}" alt=""></a>
     </div>
     {% else %}
@@ -145,7 +84,7 @@
                 <a href="javascript:shareStory()">
                   <img src="https://s3.ap-northeast-2.amazonaws.com/ohoystudio/Icon/kakaostory.png">카카오스토리</a>
 
-                <a href="https://www.facebook.com/sharer/sharer.php?u=ohoystudio.kr/wedding{{ post.id }}">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=ohoystudio.kr/sample{{ post.id }}">
                   <img src="https://s3.ap-northeast-2.amazonaws.com/ohoystudio/Icon/facebook.png">페이스북</a>
 
                 <a href="javascript:share_tw()">
@@ -167,7 +106,6 @@
     {% else %}
 
     {% endif %}
-
 
 <script type="text/javascript">
 var UserAgent = navigator.userAgent;
@@ -191,7 +129,7 @@ var isMobile = UserAgent.match(/iPhone|iPod|Android|iPad/i);
     },
     webButton: {
       text: '청첩장 보러가기',
-      url: 'http://ohoystudio.kr/wedding{{ post.id }}', // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+      url: 'http://ohoystudio.kr/sample{{ post.id }}', // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
     }
   });
 
@@ -205,7 +143,7 @@ var isMobile = UserAgent.match(/iPhone|iPod|Android|iPad/i);
 // 스토리 공유 버튼을 생성합니다.
  function shareStory() {
       Kakao.Story.share({
-        url: 'http://ohoystudio.kr/wedding{{ post.id }}',
+        url: 'http://ohoystudio.kr/sample{{ post.id }}',
         text: '{{ post.kakao_link_label }}'
       });
     }
@@ -214,7 +152,7 @@ var isMobile = UserAgent.match(/iPhone|iPod|Android|iPad/i);
 <script type="text/javascript">
   function share_tw(){
   var content = "{{ post.title }}";
-  var link = "http://ohoystudio.kr/wedding{{ post.id }}";
+  var link = "http://ohoystudio.kr/sample{{ post.id }}";
   var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";
   var wp = window.open("http://twitter.com/share?url=" + encodeURIComponent(link) + "&text=" + encodeURIComponent(content), 'twitter', popOption);
   if ( wp ) {
