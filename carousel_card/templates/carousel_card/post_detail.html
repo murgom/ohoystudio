@@ -1,0 +1,370 @@
+{% extends 'carousel_card/base.html' %}
+{% load imagekit %}
+
+{% block content %}
+<div class="main">
+{% if post.main_image1 %}
+  <!-- 메인화면 -->
+  <div class="main1">
+    <!-- image1 구역 -->
+    <img src="{{ post.main_image1.url }}" alt="">
+  </div><!-- //소개 끝 -->
+{% else %}
+
+{% endif %}
+
+
+{% if post.invitation_image2 %}
+  <div class="invitation">
+    <!-- image2 구역 -->
+    <img src="{{ post.invitation_image2.url }}" alt="">
+  </div>
+{% else %}
+
+{% endif %}
+
+{% if post.family_image3 %}
+  <div class="invitation">
+    <!-- image3 구역 -->
+      <img src="{{ post.family_image3.url }}" alt="">
+  </div>
+{% else %}
+
+{% endif %}
+
+
+{% if post.call1_image4 %}
+<div class="call">
+  <div class="left_box">
+    <!-- image4 구역 -->
+      <a href="javascript:location.href='tel:{{ post.call1 }}'"><img src="{{ post.call1_image4.url }}" alt=""></a>
+  </div>
+{% else %}
+
+{% endif %}
+
+
+{% if post.call2_image5 %}
+  <div class="right_box">
+    <!-- image5 구역 -->
+    <a href="javascript:location.href='tel:{{ post.call2 }}'"><img src="{{ post.call2_image5.url }}" alt=""></a>
+  </div>
+</div>
+  {% else %}
+
+  {% endif %}
+
+
+{% if post.celendar_image6 %}
+    <div class="calendar">
+      <!-- image6 구역 -->
+    <img src="{{ post.celendar_image6.url }}">
+  </div>
+  {% else %}
+
+  {% endif %}
+
+<div class="gallery">
+<div class="container" id="carousel">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+<ol class="carousel-indicators">
+  {% if posts.gallery_image1 %}
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+  {% endif %}
+    {% if posts.gallery_image2 %}
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    {% endif %}
+    {% if posts.gallery_image3 %}
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    {% endif %}
+    {% if posts.gallery_image4 %}
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    {% endif %}
+    {% if posts.gallery_image5 %}
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+    {% endif %}
+    {% if posts.gallery_image6 %}
+      <li data-target="#myCarousel" data-slide-to="5"></li>
+    {% endif %}
+    {% if posts.gallery_image7 %}
+      <li data-target="#myCarousel" data-slide-to="6"></li>
+    {% endif %}
+    {% if posts.gallery_image8 %}
+      <li data-target="#myCarousel" data-slide-to="7"></li>
+    {% endif %}
+    {% if posts.gallery_image9 %}
+      <li data-target="#myCarousel" data-slide-to="8"></li>
+    {% endif %}
+    {% if posts.gallery_image10 %}
+      <li data-target="#myCarousel" data-slide-to="9"></li>
+    {% endif %}
+</ol>
+
+    <!-- Wrapper for slides -->
+{% if posts.gallery_image1 %}
+    <div class="carousel-inner">
+      <div class="item active">
+        <img class="img-circle" src="{{ posts.gallery_image1.url }}" alt="{{ posts.image1_name }}" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>{{ posts.image1_name }}</h3>
+          <p>{{ posts.image1_explain }}</p>
+        </div>
+      </div>
+{% endif %}
+
+{% if posts.gallery_image2 %}
+      <div class="item">
+        <img class="img-circle" src="{{ posts.gallery_image2.url }}" alt="{{ posts.image2_name }}" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>{{ posts.image2_name }}</h3>
+          <p>{{ posts.image2_explain }}</p>
+        </div>
+      </div>
+{% endif %}
+
+{% if posts.gallery_image3 %}
+      <div class="item">
+        <img class="img-circle" src="{{ posts.gallery_image3.url }}" alt="{{ posts.image3_name }}" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>{{ posts.image3_name }}</h3>
+          <p>{{ posts.image3_explain }}</p>
+        </div>
+      </div>
+{% endif %}
+
+{% if posts.gallery_image4 %}
+      <div class="item">
+        <img class="img-circle" src="{{ posts.gallery_image4.url }}" alt="{{ posts.image4_name }}" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>{{ posts.image4_name }}</h3>
+          <p>{{ posts.image4_explain }}</p>
+        </div>
+      </div>
+{% endif %}
+
+{% if posts.gallery_image5 %}
+      <div class="item">
+        <img class="img-circle" src="{{ posts.gallery_image5.url }}" alt="{{ posts.image5_name }}" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>{{ posts.image5_name }}</h3>
+          <p>{{ posts.image5_explain }}</p>
+        </div>
+      </div>
+{% endif %}
+
+{% if posts.gallery_image6 %}
+      <div class="item">
+        <img class="img-circle" src="{{ posts.gallery_image6.url }}" alt="{{ posts.image6_name }}" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>{{ posts.image6_name }}</h3>
+          <p>{{ posts.image6_explain }}</p>
+        </div>
+      </div>
+{% endif %}
+
+{% if posts.gallery_image7 %}
+      <div class="item">
+        <img class="img-circle" src="{{ posts.gallery_image7.url }}" alt="{{ posts.image7_name }}" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>{{ posts.image7_name }}</h3>
+          <p>{{ posts.image7_explain }}</p>
+        </div>
+      </div>
+{% endif %}
+
+{% if posts.gallery_image8 %}
+      <div class="item">
+        <img class="img-circle" src="{{ posts.gallery_image8.url }}" alt="{{ posts.image8_name }}" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>{{ posts.image8_name }}</h3>
+          <p>{{ posts.image8_explain }}</p>
+        </div>
+      </div>
+{% endif %}
+
+{% if posts.gallery_image9 %}
+      <div class="item">
+        <img class="img-circle" src="{{ posts.gallery_image9.url }}" alt="{{ posts.image9_name }}" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>{{ posts.image9_name }}</h3>
+          <p>{{ posts.image9_explain }}</p>
+        </div>
+      </div>
+{% endif %}
+
+{% if posts.gallery_image10 %}
+      <div class="item">
+        <img class="img-circle" src="{{ posts.gallery_image10.url }}" alt="{{ posts.image10_name }}" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>{{ posts.image10_name }}</h3>
+          <p>{{ posts.image10_explain }}</p>
+        </div>
+      </div>
+{% endif %}
+
+
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+</div>
+
+
+  {% if post.videotitle_image8 %}
+
+    <div class="videotitle">
+      <!-- image8(videotitle) 구역 -->
+      <img src="{{ post.videotitle_image8.url }}" alt="">
+    </div>
+    <div class="video" style=
+    "padding-left: 17px;
+     padding-right: 17px;">
+      <div class="embed-responsive embed-responsive-16by9">
+        <!-- 동영상 구역 -->
+    {{ post.youtube_url|safe }}
+      </div>
+    </div>
+    {% else %}
+    {% endif %}
+
+{% if post.map_image9 %}
+
+  <div class="map">
+      <!-- image9 구역 -->
+  <a href="{{ post.naver_map_url }}"><img src="{{ post.map_image9.url }}" alt=""></a>
+  </div>
+
+    {% else %}
+
+    {% endif %}
+
+{% if post.map_infor_image10 %}
+
+  <div class="videotitle">
+    <!-- image10 구역 -->
+  <img src="{{ post.map_infor_image10.url }}" alt="">
+  </div>
+  {% else %}
+
+  {% endif %}
+
+
+{% if post.kakao_image12 %}
+  <div class="sns">
+    <!-- image12 구역 -->
+    <div class="left_box">
+      <a id="kakao-link-btn" href="javascript:KakaoDirect();">
+                    <img src="{{ post.kakao_image12.url }}"> </a>
+    </div>
+    {% else %}
+
+    {% endif %}
+
+{% if post.story_image13 %}
+    <div class="right_box">
+      <!-- image13 구역 -->
+      <a href="{% url "carousel_card:sms_image" pk=post.pk %}">
+        <img src="{{ post.story_image13.url }}" alt=""></a>
+    </div>
+    {% else %}
+
+    {% endif %}
+
+{% if post.facebook_image14 %}
+    <div class="left_box">
+      <!-- image14 구역 -->
+      <div class="dropup" id="drop_up">
+      <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+        <img src="{{ post.facebook_image14.url }}" alt=""></a>
+      <div class="dropdown-menu dropdown-menu-right" id="dropdown_menu">
+                <a href="javascript:shareStory()">
+                  <img src="https://s3.ap-northeast-2.amazonaws.com/ohoystudio/Icon/kakaostory.png">카카오스토리</a>
+
+                <a href="https://www.facebook.com/sharer/sharer.php?u=ohoystudio.kr/carousel{{ post.id }}">
+                  <img src="https://s3.ap-northeast-2.amazonaws.com/ohoystudio/Icon/facebook.png">페이스북</a>
+
+                <a href="javascript:share_tw()">
+                  <img src="https://s3.ap-northeast-2.amazonaws.com/ohoystudio/Icon/twitter.png">트위터</a>
+      </div>
+    </div>
+    </div>
+    {% else %}
+
+    {% endif %}
+
+
+
+  {% if post.copyright_image16 %}
+      <div class="ohoystdio">
+        <a href="{{ post.ohoystudio_url }}"><img src="{{ post.copyright_image16.url }}" alt=""></a>
+      </div>
+        </div>
+    {% else %}
+
+    {% endif %}
+
+
+<script type="text/javascript">
+var UserAgent = navigator.userAgent;
+var isMobile = UserAgent.match(/iPhone|iPod|Android|iPad/i);
+
+
+
+// 카카오톡 //
+
+// 사용할 앱의 Javascript 키를 설정해 주세요.
+  Kakao.init('390d18a99a68a2f5fbd2847d35fa9d05');
+
+  // 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+  Kakao.Link.createTalkLinkButton({
+    container: '#kakao-link-btn',
+    label: '{{ post.kakao_link_label }}',
+    image: {
+      src: '{{ post.kakao_thumbnail.url }}',
+      width: '300',
+      height: '200'
+    },
+    webButton: {
+      text: '청첩장 보러가기',
+      url: 'http://ohoystudio.kr/carousel{{ post.id }}', // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+    }
+  });
+
+// 카카오 스토리 //
+
+
+// 사용할 앱의 Javascript 키를 설정해 주세요.
+  Kakao.init('390d18a99a68a2f5fbd2847d35fa9d05');
+
+
+// 스토리 공유 버튼을 생성합니다.
+ function shareStory() {
+      Kakao.Story.share({
+        url: 'http://ohoystudio.kr/carousel{{ post.id }}',
+        text: '{{ post.kakao_link_label }}'
+      });
+    }
+
+</script>
+<script type="text/javascript">
+  function share_tw(){
+  var content = "{{ post.title }}";
+  var link = "http://ohoystudio.kr/carousel{{ post.id }}";
+  var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";
+  var wp = window.open("http://twitter.com/share?url=" + encodeURIComponent(link) + "&text=" + encodeURIComponent(content), 'twitter', popOption);
+  if ( wp ) {
+    wp.focus();
+  }    
+}
+</script>
+</div>
+{% endblock %}

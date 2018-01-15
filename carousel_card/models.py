@@ -9,10 +9,10 @@ import uuid
 import os
 
 def get_image_path(instance, filename):
-    return os.path.join('card2', "image2_%s" % str(instance), filename)
+    return os.path.join('carouseimage', "carouseimage_%s" % str(instance), filename)
 
 
-class InfomationImage(models.Model):
+class CarouselImage(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL)
     title = models.CharField(max_length=100)
     ohoystudio_url = models.CharField(max_length=300)
@@ -113,31 +113,97 @@ class InfomationImage(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('card2:post_detail',args=[self.id])
+        return reverse('carousel_card:post_detail',args=[self.id])
 
-class GalleryImage(models.Model):
-    post = models.ForeignKey(InfomationImage)
-    name = models.CharField(max_length=100)
+class CarouselGalleryImage(models.Model):
+    post = models.ForeignKey(CarouselImage)
+    name = models.CharField(max_length=100,blank=True)
+
     gallery_image1 = ProcessedImageField(blank=True,
             processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
+    image1_name = models.CharField(max_length=100,blank=True)
+    image1_explain = models.CharField(max_length=100,blank=True)
+
     gallery_image2 = ProcessedImageField(blank=True,
             processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
+    image2_name = models.CharField(max_length=100,blank=True)
+    image2_explain = models.CharField(max_length=100,blank=True)
+
     gallery_image3 = ProcessedImageField(blank=True,
             processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
             format='JPEG',
             )
+    image3_name = models.CharField(max_length=100,blank=True)
+    image3_explain = models.CharField(max_length=100,blank=True)
+
+    gallery_image4 = ProcessedImageField(blank=True,
+            processors=[Thumbnail(2000, 2000)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    image4_name = models.CharField(max_length=100,blank=True)
+    image4_explain = models.CharField(max_length=100,blank=True)
+
+    gallery_image5 = ProcessedImageField(blank=True,
+            processors=[Thumbnail(2000, 2000)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    image5_name = models.CharField(max_length=100,blank=True)
+    image5_explain = models.CharField(max_length=100,blank=True)
+
+    gallery_image6 = ProcessedImageField(blank=True,
+            processors=[Thumbnail(2000, 2000)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    image6_name = models.CharField(max_length=100,blank=True)
+    image6_explain = models.CharField(max_length=100,blank=True)
+
+    gallery_image7 = ProcessedImageField(blank=True,
+            processors=[Thumbnail(2000, 2000)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    image7_name = models.CharField(max_length=100,blank=True)
+    image7_explain = models.CharField(max_length=100,blank=True)
+
+    gallery_image8 = ProcessedImageField(blank=True,
+            processors=[Thumbnail(2000, 2000)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    image8_name = models.CharField(max_length=100,blank=True)
+    image8_explain = models.CharField(max_length=100,blank=True)
+
+    gallery_image9 = ProcessedImageField(blank=True,
+            processors=[Thumbnail(2000, 2000)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    image9_name = models.CharField(max_length=100,blank=True)
+    image9_explain = models.CharField(max_length=100,blank=True)
+
+    gallery_image10 = ProcessedImageField(blank=True,
+            processors=[Thumbnail(2000, 2000)],
+            upload_to=get_image_path,
+            format='JPEG',
+            )
+    image10_name = models.CharField(max_length=100,blank=True)
+    image10_explain = models.CharField(max_length=100,blank=True)
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-class SmsImage(models.Model):
-    post = models.ForeignKey(InfomationImage)
+class CarouselSmsImage(models.Model):
+    post = models.ForeignKey(CarouselImage)
     name = models.CharField(max_length=100)
     message_image1 = ProcessedImageField(blank=True,
             processors=[Thumbnail(2000, 2000)],

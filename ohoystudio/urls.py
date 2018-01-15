@@ -22,9 +22,10 @@ from django.shortcuts import redirect
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^sample', include('sample.urls',namespace='sample')),
+    url(r'^sample/', include('sample.urls',namespace='sample')),
     url(r'^card/', include('card.urls',namespace='card')),
     url(r'^', include('card2.urls',namespace='card2')),
+    url(r'^carousel', include('carousel_card.urls',namespace='carousel_card')),
     url(r'^card3/', include('event.urls',namespace='event')),
     url(r'^summernote/', include('django_summernote.urls')),
 ]

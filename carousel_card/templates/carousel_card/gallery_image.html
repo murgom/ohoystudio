@@ -1,0 +1,44 @@
+{% extends 'carousel_card/base.html' %}
+{% load imagekit %}
+
+{% block content %}
+<div class="container" id="carousel">
+  <h2>Carousel Example</h2>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="{{ post.gallery_image1.url }}" alt="사진 1" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>사진1</h3>
+          <p>LA is always so much fun!</p>
+        </div>
+      </div>
+
+{% if post.gallery_image2 %}
+      <div class="item">
+        <img src="{{ post.gallery_image2.url }}" alt="사진 6" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>사진6</h3>
+          <p>Thank you, Chicago!</p>
+        </div>
+      </div>
+    </div>
+{% endif %}
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+{% endblock %}

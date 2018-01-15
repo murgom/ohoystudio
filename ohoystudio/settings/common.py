@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'sample',
     'card',
     'card2',
+    'carousel_card',
     'event',
 ]
 
