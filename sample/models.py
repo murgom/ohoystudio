@@ -86,11 +86,6 @@ class SampleImage(models.Model):
             upload_to=get_image_path,
             format='JPEG',
             )
-    massage_image15 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(2000, 2000)],
-            upload_to=get_image_path,
-            format='JPEG',
-            )
     copyright_image16 = ProcessedImageField(blank=True,
             processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
@@ -115,6 +110,10 @@ class SampleImage(models.Model):
     def get_absolute_url(self):
         return reverse('sample:post_detail',args=[self.id])
 
+    class Meta:
+        verbose_name = '샘플 청첩장'
+        verbose_name_plural = '샘플 청첩장(메인)'
+
 class SampleGalleryImage(models.Model):
     post = models.ForeignKey(SampleImage)
     name = models.CharField(max_length=100)
@@ -136,6 +135,10 @@ class SampleGalleryImage(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        verbose_name = '갤러리(샘플)'
+        verbose_name_plural = '갤러리(샘플)'
+
 class SampleSmsImage(models.Model):
     post = models.ForeignKey(SampleImage)
     name = models.CharField(max_length=100)
@@ -156,3 +159,7 @@ class SampleSmsImage(models.Model):
             )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = '2G 핸드폰공유 이미지(샘플)'
+        verbose_name_plural = '2G 핸드폰공유 이미지(샘플)'

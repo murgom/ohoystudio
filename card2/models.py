@@ -86,11 +86,6 @@ class InfomationImage(models.Model):
             upload_to=get_image_path,
             format='JPEG',
             )
-    massage_image15 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(2000, 2000)],
-            upload_to=get_image_path,
-            format='JPEG',
-            )
     copyright_image16 = ProcessedImageField(blank=True,
             processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
@@ -108,6 +103,10 @@ class InfomationImage(models.Model):
             )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = '댓글없는 청첩장'
+        verbose_name_plural = '댓글없는 청첩장(메인)'
 
     def __str__(self):
         return self.title
@@ -136,6 +135,10 @@ class GalleryImage(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        verbose_name = '갤러리'
+        verbose_name_plural = '갤러리'
+
 class SmsImage(models.Model):
     post = models.ForeignKey(InfomationImage)
     name = models.CharField(max_length=100)
@@ -156,3 +159,7 @@ class SmsImage(models.Model):
             )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = '2G 핸드폰공유 이미지'
+        verbose_name_plural = '2G 핸드폰공유 이미지'

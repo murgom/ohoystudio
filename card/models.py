@@ -92,11 +92,6 @@ class Post(models.Model):
             upload_to=get_image_path,
             format='JPEG',
             )
-    massage_image15 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(2000, 2000)],
-            upload_to=get_image_path,
-            format='JPEG',
-            )
     copyright_image16 = ProcessedImageField(blank=True,
             processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
@@ -114,6 +109,10 @@ class Post(models.Model):
             )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = '댓글있는 청첩장'
+        verbose_name_plural = '댓글있는 청첩장(메인)'
 
     def __str__(self):
         return self.title
@@ -138,6 +137,9 @@ class Comment(models.Model):
         ordering = ['-id']
         #id 역순서 배치
 
+    class Meta:
+        verbose_name = '댓글'
+        verbose_name_plural = '댓글'
 
 class PostGallery(models.Model):
     post = models.ForeignKey(Post)
@@ -160,6 +162,10 @@ class PostGallery(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        verbose_name = '갤러리'
+        verbose_name_plural = '갤러리'
+
 class SmsImage(models.Model):
     post = models.ForeignKey(Post)
     name = models.CharField(max_length=100)
@@ -180,3 +186,7 @@ class SmsImage(models.Model):
             )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = '2G 핸드폰공유 이미지'
+        verbose_name_plural = '2G 핸드폰공유 이미지'

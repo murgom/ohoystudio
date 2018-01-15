@@ -5,21 +5,33 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
     list_display = ['id', 'title','post_content_str','main_image1','created_at', 'updated_at']
+    list_display_links = ('title',)
 
     def post_content_str(self, post):
-        return '동영상 링크 : {}'.format(str(post.youtube_url))
+        return '청첩장 이름(댓글O) : {}'.format(str(post.title))
 
 @admin.register(PostGallery)
 class PostNotCommentAdmin(SummernoteModelAdmin):
-    list_display = ['id', 'name','gallery_image1','created_at', 'updated_at']
+    list_display = ['id', 'name','post_content_str','created_at', 'updated_at']
+    list_display_links = ('name',)
 
+    def post_content_str(self, post):
+        return '연결된 청첩장(댓글O) : {}'.format(str(post.post))
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ['id', 'user','message','password1','post_title_str','comment_content_len']
+    list_display = ['id', 'post_title_str','post_user_str','post_message_str','password1','comment_content_len']
+    list_display_links = ('post_user_str','post_title_str')
     # prepopulated_fields = { 'password2': ['password1'] }
+
+    def post_user_str(self,comment):
+        return '작성자 : {}'.format(str(comment.user))
+
+    def post_message_str(self,comment):
+        return '댓글 내용 : {}'.format(str(comment.message))
+
     def post_title_str(self,comment):
-        return '{} 게시물 글'.format(str(comment.post.title))
+        return '{} 게시물 댓글'.format(str(comment.post.title))
 
     def comment_content_len(self,comment):
         return '댓글 : {}글자'.format(len(comment.message))

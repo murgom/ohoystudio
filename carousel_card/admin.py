@@ -12,7 +12,11 @@ class PostNotCommentAdmin(SummernoteModelAdmin):
 
 @admin.register(CarouselGalleryImage)
 class PostNotCommentAdmin(SummernoteModelAdmin):
-    list_display = ['id', 'name','gallery_image1','created_at', 'updated_at']
+    list_display = ['id', 'name','post_content_str','created_at', 'updated_at']
+    list_display_links = ('name',)
+
+    def post_content_str(self, post):
+        return '연결된 청첩장(이미지 회전) : {}'.format(str(post.post))
 
 @admin.register(CarouselSmsImage)
 class PostNotCommentAdmin(SummernoteModelAdmin):

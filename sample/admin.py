@@ -12,7 +12,11 @@ class PostNotCommentAdmin(SummernoteModelAdmin):
 
 @admin.register(SampleGalleryImage)
 class PostNotCommentAdmin(SummernoteModelAdmin):
-    list_display = ['id', 'name','gallery_image1','created_at', 'updated_at']
+    list_display = ['id', 'post_content_str','gallery_image1','created_at', 'updated_at']
+    list_display_links = ('post_content_str',)
+
+    def post_content_str(self, post):
+        return '연결된 청첩장(샘플) : {}'.format(str(post.post))
 
 @admin.register(SampleSmsImage)
 class PostNotCommentAdmin(SummernoteModelAdmin):
