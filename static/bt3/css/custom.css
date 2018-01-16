@@ -52,6 +52,6 @@
 		.dropdown-menu {vertical-align: middle;}
 		#carousel img {width:100%;height:auto;}
 		.carousel-caption {top:auto;}
-		.carousel-indicators li {background-color: #808080;border-color: #808080;}
-		.carousel-indicators .active {background-color: #000;}
+		.carousel-indicators li {background-color: #eee;border:0px;margin-left:10px;}
+		.carousel-indicators .active {background-color: #4f4f4f;margin-left:10px;}
 	</style>
