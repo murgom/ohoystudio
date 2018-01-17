@@ -15,8 +15,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <!-- 핸드폰 최적화 -->
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+
+
+
     <title>{{ post.title }}</title>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="//code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
 	function callNumber(num){
 	location.href="tel:"+num;
@@ -28,9 +32,9 @@
     {% block content %}
     {% endblock %}
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{% static 'bt3/js/jquery.mobile.custom.min.js' %}"></script>
     <script src="{% static 'bt3/js/bootstrap.min.js' %}"></script>
-    <script src="{% static "bt3/jquery/dist/jquery.min.js" %}"></script>
     <script src="{% static "jquery.csrf.js"%}"></script> <!-- 메번 ajax 셋업 -->
   </body>

@@ -64,9 +64,11 @@
 
   {% endif %}
 
-<div class="gallery">
-<div class="container" id="carousel">
+<div class="gallery_carousel">
+<div class="container" id="carousel_1">
+
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <h3 style="background-color: #F6F6F6;margin: 0px;padding-top: 30px;">Photo</h3>
     <!-- Indicators -->
 <ol class="carousel-indicators">
   {% if posts.gallery_image1 %}
@@ -104,28 +106,20 @@
     <!-- Wrapper for slides -->
 {% if posts.gallery_image1 %}
     <div class="carousel-inner">
-      <div class="item active">
-        <img class="" src="{{ posts.gallery_image1.url }}" alt="{{ posts.image1_name }}" style="width:100%;height:100%">
-        <div class="carousel-caption">
-          <h3>{{ posts.image1_name }}</h3>
-          <p>{{ posts.image1_explain }}</p>
+        <div class="item active">
+          <img src="{{ posts.gallery_image1.url }}" alt="{{ posts.image1_name }}">
         </div>
-      </div>
 {% endif %}
 
 {% if posts.gallery_image2 %}
       <div class="item">
-        <img class="" src="{{ posts.gallery_image2.url }}" alt="{{ posts.image2_name }}" style="width:100%;height:100%">
-        <div class="carousel-caption">
-          <h3>{{ posts.image2_name }}</h3>
-          <p>{{ posts.image2_explain }}</p>
-        </div>
+        <img src="{{ posts.gallery_image2.url }}" alt="{{ posts.image2_name }}">
       </div>
 {% endif %}
 
 {% if posts.gallery_image3 %}
       <div class="item">
-        <img class="" src="{{ posts.gallery_image3.url }}" alt="{{ posts.image3_name }}" style="width:100%;">
+        <img class="" src="{{ posts.gallery_image3.url }}" alt="{{ posts.image3_name }}">
         <div class="carousel-caption">
           <h3>{{ posts.image3_name }}</h3>
           <p>{{ posts.image3_explain }}</p>
@@ -135,7 +129,7 @@
 
 {% if posts.gallery_image4 %}
       <div class="item">
-        <img class="" src="{{ posts.gallery_image4.url }}" alt="{{ posts.image4_name }}" style="width:100%;">
+        <img class="" src="{{ posts.gallery_image4.url }}" alt="{{ posts.image4_name }}">
         <div class="carousel-caption">
           <h3>{{ posts.image4_name }}</h3>
           <p>{{ posts.image4_explain }}</p>
@@ -145,7 +139,7 @@
 
 {% if posts.gallery_image5 %}
       <div class="item">
-        <img class="" src="{{ posts.gallery_image5.url }}" alt="{{ posts.image5_name }}" style="width:100%;">
+        <img class="" src="{{ posts.gallery_image5.url }}" alt="{{ posts.image5_name }}">
         <div class="carousel-caption">
           <h3>{{ posts.image5_name }}</h3>
           <p>{{ posts.image5_explain }}</p>
@@ -155,7 +149,7 @@
 
 {% if posts.gallery_image6 %}
       <div class="item">
-        <img class="" src="{{ posts.gallery_image6.url }}" alt="{{ posts.image6_name }}" style="width:100%;">
+        <img class="" src="{{ posts.gallery_image6.url }}" alt="{{ posts.image6_name }}">
         <div class="carousel-caption">
           <h3>{{ posts.image6_name }}</h3>
           <p>{{ posts.image6_explain }}</p>
@@ -165,7 +159,7 @@
 
 {% if posts.gallery_image7 %}
       <div class="item">
-        <img class="" src="{{ posts.gallery_image7.url }}" alt="{{ posts.image7_name }}" style="width:100%;">
+        <img class="" src="{{ posts.gallery_image7.url }}" alt="{{ posts.image7_name }}">
         <div class="carousel-caption">
           <h3>{{ posts.image7_name }}</h3>
           <p>{{ posts.image7_explain }}</p>
@@ -175,7 +169,7 @@
 
 {% if posts.gallery_image8 %}
       <div class="item">
-        <img class="" src="{{ posts.gallery_image8.url }}" alt="{{ posts.image8_name }}" style="width:100%;">
+        <img class="" src="{{ posts.gallery_image8.url }}" alt="{{ posts.image8_name }}">
         <div class="carousel-caption">
           <h3>{{ posts.image8_name }}</h3>
           <p>{{ posts.image8_explain }}</p>
@@ -185,7 +179,7 @@
 
 {% if posts.gallery_image9 %}
       <div class="item">
-        <img class="" src="{{ posts.gallery_image9.url }}" alt="{{ posts.image9_name }}" style="width:100%;">
+        <img class="" src="{{ posts.gallery_image9.url }}" alt="{{ posts.image9_name }}">
         <div class="carousel-caption">
           <h3>{{ posts.image9_name }}</h3>
           <p>{{ posts.image9_explain }}</p>
@@ -195,20 +189,30 @@
 
 {% if posts.gallery_image10 %}
       <div class="item">
-        <img class="" src="{{ posts.gallery_image10.url }}" alt="{{ posts.image10_name }}" style="width:100%;">
+        <img class="" src="{{ posts.gallery_image10.url }}" alt="{{ posts.image10_name }}">
         <div class="carousel-caption">
           <h3>{{ posts.image10_name }}</h3>
           <p>{{ posts.image10_explain }}</p>
         </div>
       </div>
 {% endif %}
-
-
+</div>
 
   </div>
 </div>
 </div>
 
+
+<script>
+$(document).ready(function() {
+   $("#myCarousel").swiperight(function() {
+      $(this).carousel('prev');
+    });
+   $("#myCarousel").swipeleft(function() {
+      $(this).carousel('next');
+   });
+});
+</script>
 
   {% if post.videotitle_image8 %}
 
@@ -303,6 +307,9 @@
 
     {% endif %}
 
+<script type="text/javascript">
+
+</script>
 
 <script type="text/javascript">
 var UserAgent = navigator.userAgent;
