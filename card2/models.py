@@ -13,7 +13,7 @@ def get_image_path(instance, filename):
 
 
 class InfomationImage(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     title = models.CharField(max_length=100)
     ohoystudio_url = models.CharField(max_length=300)
     youtube_url = models.TextField(default='')
@@ -115,7 +115,7 @@ class InfomationImage(models.Model):
         return reverse('card2:post_detail',args=[self.id])
 
 class GalleryImage(models.Model):
-    post = models.ForeignKey(InfomationImage)
+    post = models.ForeignKey(InfomationImage, on_delete=models.PROTECT)
     name = models.CharField(max_length=100)
     gallery_image1 = ProcessedImageField(blank=True,
             processors=[Thumbnail(2000, 2000)],
@@ -140,7 +140,7 @@ class GalleryImage(models.Model):
         verbose_name_plural = '갤러리'
 
 class SmsImage(models.Model):
-    post = models.ForeignKey(InfomationImage)
+    post = models.ForeignKey(InfomationImage, on_delete=models.PROTECT)
     name = models.CharField(max_length=100)
     message_image1 = ProcessedImageField(blank=True,
             processors=[Thumbnail(2000, 2000)],

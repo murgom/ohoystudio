@@ -13,7 +13,7 @@ def get_image_path(instance, filename):
 
 
 class CarouselImage(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     title = models.CharField(max_length=100)
     ohoystudio_url = models.CharField(max_length=300)
     youtube_url = models.TextField(default='')
@@ -115,7 +115,7 @@ class CarouselImage(models.Model):
         return reverse('carousel_card:post_detail',args=[self.id])
 
 class CarouselGalleryImage(models.Model):
-    post = models.ForeignKey(CarouselImage)
+    post = models.ForeignKey(CarouselImage, on_delete=models.PROTECT)
     name = models.CharField(max_length=100,blank=True)
 
     gallery_image1 = ProcessedImageField(blank=True,
@@ -195,7 +195,7 @@ class CarouselGalleryImage(models.Model):
         verbose_name_plural = '갤러리 이미지'
 
 class CarouselSmsImage(models.Model):
-    post = models.ForeignKey(CarouselImage)
+    post = models.ForeignKey(CarouselImage, on_delete=models.PROTECT)
     name = models.CharField(max_length=100)
     message_image1 = ProcessedImageField(blank=True,
             processors=[Thumbnail(2000, 2000)],

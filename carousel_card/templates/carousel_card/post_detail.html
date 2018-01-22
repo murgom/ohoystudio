@@ -68,7 +68,14 @@
 <div class="container" id="carousel_1">
 
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <h3 style="background-color: #F6F6F6;margin: 0px;padding-top: 30px;">Photo</h3>
+{% if post.gallery_image7 %}
+  <div class="gallery">
+    <!-- image7 구역 -->
+    <a href="{% url "carousel_card:gallery_image" pk=post.pk %}"><img src="{{ post.gallery_image7.url }}" alt=""></a>
+  </div>
+  {% else %}
+
+  {% endif %}
     <!-- Indicators -->
 <ol class="carousel-indicators">
   {% if posts.gallery_image1 %}

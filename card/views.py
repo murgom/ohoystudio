@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect, resolve_url
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from card.models import Post, PostGallery ,Comment, SmsImage
 from .forms import PostForm, CommentForm, CommentDeleteForm 
@@ -22,6 +22,20 @@ def post_detail(request, pk):
                                     'post': post,
                                     'form': form,
                                     })
+
+# def sample_post_detail(request, pk):
+#     post = get_object_or_404(SamplePost, pk=pk)
+#     form = CommentForm(request.POST or None)
+
+#     if form.is_valid():
+#         comment = form.save(commit=False)
+#         comment.post = post
+#         comment.save()
+#         return redirect(request.path)
+#     return render(request, 'card/sample_post_detail.html', {
+#                                     'post': post,
+#                                     'form': form,
+#                                     })
 
 def post_gallery(request, pk):
     post = get_object_or_404(PostGallery, pk=pk)

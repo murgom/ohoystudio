@@ -1,12 +1,15 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
-urlpatterns = [
-    url(r'^list/$', views.post_list, name="post_list"),
-    url(r'^wedding(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
-    url(r'^gallery_card(?P<pk>\d+)/$', views.post_gallery, name='post_gallery'),
-    url(r'^gallery_card2/(?P<pk>\d+)/$', views.sms_image, name='sms_image'),
-    url(r'^comments/$', views.comment_list, name='comment_list'),
+app_name = "card"
 
-    url(r'^comment/(?P<pk>\d+)/delete/$', views.comment_delete, name='comment_delete'),
+urlpatterns = [
+    path('list/', views.post_list, name="post_list"),
+    path('wedding<int:pk>/', views.post_detail, name='post_detail'),
+    # path('sample/wedding<int:pk>/', views.sample_post_detail, name='sample_post_detail'),
+    path('gallery_card<int:pk>/', views.post_gallery, name='post_gallery'),
+    path('gallery_card2/<int:pk>/', views.sms_image, name='sms_image'),
+    path('comments/', views.comment_list, name='comment_list'),
+
+    path('comment/<int:pk>/delete/', views.comment_delete, name='comment_delete'),
 ]

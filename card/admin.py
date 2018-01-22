@@ -10,6 +10,15 @@ class PostAdmin(SummernoteModelAdmin):
     def post_content_str(self, post):
         return '청첩장 이름(댓글O) : {}'.format(str(post.title))
 
+# @admin.register(SamplePost)
+# class PostAdmin(SummernoteModelAdmin):
+#     list_display = ['id', 'title','post_content_str','main_image1','created_at', 'updated_at']
+#     list_display_links = ('title',)
+
+#     def post_content_str(self, post):
+#         return '청첩장 이름(댓글O) : {}'.format(str(post.title))
+
+
 @admin.register(PostGallery)
 class PostNotCommentAdmin(SummernoteModelAdmin):
     list_display = ['id', 'name','post_content_str','created_at', 'updated_at']

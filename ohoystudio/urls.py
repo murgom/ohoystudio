@@ -15,19 +15,17 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.conf import settings
-from django.conf.urls import url, include
 from django.contrib import admin
 from django.shortcuts import redirect
-
+from django.urls import path, include
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^sample/', include('sample.urls',namespace='sample')),
-    url(r'^card/', include('card.urls',namespace='card')),
-    url(r'^', include('card2.urls',namespace='card2')),
-    url(r'^carousel', include('carousel_card.urls',namespace='carousel_card')),
-    url(r'^card3/', include('event.urls',namespace='event')),
-    url(r'^summernote/', include('django_summernote.urls')),
+    path('admin/', admin.site.urls),
+    path('card/', include('card.urls',namespace='card')),
+    path('', include('card2.urls',namespace='card2')),
+    path('event', include('carousel_card.urls',namespace='carousel_card')),
+    path('card3/', include('event.urls',namespace='event')),
+    path('summernote/', include('django_summernote.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

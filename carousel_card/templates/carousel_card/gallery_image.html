@@ -1,163 +1,109 @@
+{% extends 'carousel_card/base.html' %}
+{% load imagekit %}
 
-<html lang="en" class="">
+{% block content %}
+<body leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+ <tbody>
+   <tr>
+      <td align="center">
+           {% if posts.gallery_image1 %}
+           <img src="{{ posts.gallery_image1.url }}" style="width:100%;">
+           {% else %}
 
-<head>
-  <link rel="stylesheet prefetch" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-</head>
+           {% endif %}
+       </td>
+    </tr>
 
-<body>
-<div class="gallery_carousel">
-<div class="container" id="carousel">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-<ol class="carousel-indicators">
-  {% if posts.gallery_image1 %}
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-  {% endif %}
-    {% if posts.gallery_image2 %}
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-    {% endif %}
-    {% if posts.gallery_image3 %}
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    {% endif %}
-    {% if posts.gallery_image4 %}
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-    {% endif %}
-    {% if posts.gallery_image5 %}
-      <li data-target="#myCarousel" data-slide-to="4"></li>
-    {% endif %}
-    {% if posts.gallery_image6 %}
-      <li data-target="#myCarousel" data-slide-to="5"></li>
-    {% endif %}
-    {% if posts.gallery_image7 %}
-      <li data-target="#myCarousel" data-slide-to="6"></li>
-    {% endif %}
-    {% if posts.gallery_image8 %}
-      <li data-target="#myCarousel" data-slide-to="7"></li>
-    {% endif %}
-    {% if posts.gallery_image9 %}
-      <li data-target="#myCarousel" data-slide-to="8"></li>
-    {% endif %}
-    {% if posts.gallery_image10 %}
-      <li data-target="#myCarousel" data-slide-to="9"></li>
-    {% endif %}
-</ol>
+     <tr>
+         <td align="center">
+           {% if posts.gallery_image2 %}
+           <img src="{{ posts.gallery_image2.url }}" style="width:100%;">
+           {% else %}
+          
+           {% endif %}
+        </td>
+      </tr>
+      <tr>
+           <td align="center">
+             {% if posts.gallery_image3 %}
+             <img src="{{ posts.gallery_image3.url }}" style="width:100%;">
+             {% else %}
 
-    <!-- Wrapper for slides -->
-{% if posts.gallery_image1 %}
-    <div class="carousel-inner">
-        <div class="item active">
-          <img src="{{ posts.gallery_image1.url }}" alt="{{ posts.image1_name }}">
-        </div>
-{% endif %}
+             {% endif %}
 
-{% if posts.gallery_image2 %}
-      <div class="item">
-        <img src="{{ posts.gallery_image2.url }}" alt="{{ posts.image2_name }}">
-      </div>
-{% endif %}
+            </td>
+      </tr>
+      <tr>
+           <td align="center">
+             {% if posts.gallery_image4 %}
+             <img src="{{ posts.gallery_image4.url }}" style="width:100%;">
+             {% else %}
 
-{% if posts.gallery_image3 %}
-      <div class="item">
-        <img class="" src="{{ posts.gallery_image3.url }}" alt="{{ posts.image3_name }}">
-        <div class="carousel-caption">
-          <h3>{{ posts.image3_name }}</h3>
-          <p>{{ posts.image3_explain }}</p>
-        </div>
-      </div>
-{% endif %}
+             {% endif %}
 
-{% if posts.gallery_image4 %}
-      <div class="item">
-        <img class="" src="{{ posts.gallery_image4.url }}" alt="{{ posts.image4_name }}">
-        <div class="carousel-caption">
-          <h3>{{ posts.image4_name }}</h3>
-          <p>{{ posts.image4_explain }}</p>
-        </div>
-      </div>
-{% endif %}
+            </td>
+      </tr>
+   <tr>
+      <td align="center">
+           {% if posts.gallery_image5 %}
+           <img src="{{ posts.gallery_image5.url }}" style="width:100%;">
+           {% else %}
 
-{% if posts.gallery_image5 %}
-      <div class="item">
-        <img class="" src="{{ posts.gallery_image5.url }}" alt="{{ posts.image5_name }}">
-        <div class="carousel-caption">
-          <h3>{{ posts.image5_name }}</h3>
-          <p>{{ posts.image5_explain }}</p>
-        </div>
-      </div>
-{% endif %}
+           {% endif %}
+       </td>
+    </tr>
 
-{% if posts.gallery_image6 %}
-      <div class="item">
-        <img class="" src="{{ posts.gallery_image6.url }}" alt="{{ posts.image6_name }}">
-        <div class="carousel-caption">
-          <h3>{{ posts.image6_name }}</h3>
-          <p>{{ posts.image6_explain }}</p>
-        </div>
-      </div>
-{% endif %}
+     <tr>
+         <td align="center">
+           {% if posts.gallery_image6 %}
+           <img src="{{ posts.gallery_image6.url }}" style="width:100%;">
+           {% else %}
+          
+           {% endif %}
+        </td>
+      </tr>
+      <tr>
+           <td align="center">
+             {% if posts.gallery_image7 %}
+             <img src="{{ posts.gallery_image7.url }}" style="width:100%;">
+             {% else %}
 
-{% if posts.gallery_image7 %}
-      <div class="item">
-        <img class="" src="{{ posts.gallery_image7.url }}" alt="{{ posts.image7_name }}">
-        <div class="carousel-caption">
-          <h3>{{ posts.image7_name }}</h3>
-          <p>{{ posts.image7_explain }}</p>
-        </div>
-      </div>
-{% endif %}
+             {% endif %}
 
-{% if posts.gallery_image8 %}
-      <div class="item">
-        <img class="" src="{{ posts.gallery_image8.url }}" alt="{{ posts.image8_name }}">
-        <div class="carousel-caption">
-          <h3>{{ posts.image8_name }}</h3>
-          <p>{{ posts.image8_explain }}</p>
-        </div>
-      </div>
-{% endif %}
+            </td>
+      </tr>
+      <tr>
+           <td align="center">
+             {% if posts.gallery_image8 %}
+             <img src="{{ posts.gallery_image8.url }}" style="width:100%;">
+             {% else %}
 
-{% if posts.gallery_image9 %}
-      <div class="item">
-        <img class="" src="{{ posts.gallery_image9.url }}" alt="{{ posts.image9_name }}">
-        <div class="carousel-caption">
-          <h3>{{ posts.image9_name }}</h3>
-          <p>{{ posts.image9_explain }}</p>
-        </div>
-      </div>
-{% endif %}
+             {% endif %}
 
-{% if posts.gallery_image10 %}
-      <div class="item">
-        <img class="" src="{{ posts.gallery_image10.url }}" alt="{{ posts.image10_name }}">
-        <div class="carousel-caption">
-          <h3>{{ posts.image10_name }}</h3>
-          <p>{{ posts.image10_explain }}</p>
-        </div>
-      </div>
-{% endif %}
-</div>
+            </td>
+      </tr>
+      <tr>
+           <td align="center">
+             {% if posts.gallery_image9 %}
+             <img src="{{ posts.gallery_image9.url }}" style="width:100%;">
+             {% else %}
 
-<!-- Controls -->
+             {% endif %}
 
-  </div>
-</div>
-</div>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
-<script>
+            </td>
+      </tr>
+      <tr>
+           <td align="center">
+             {% if posts.gallery_image10 %}
+             <img src="{{ posts.gallery_image10.url }}" style="width:100%;">
+             {% else %}
 
-$(".carousel").swipe({
+             {% endif %}
 
-  swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
-
-    if (direction == 'left') $(this).carousel('next');
-    if (direction == 'right') $(this).carousel('prev');
-
-  },
-  allowPageScroll:"vertical"
-
-});
-</script>
-</body></html>
+            </td>
+      </tr>
+</tbody>
+</table>
+</body>
+{% endblock %}

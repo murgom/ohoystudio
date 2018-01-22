@@ -14,7 +14,7 @@ def get_image_path(instance, filename):
 
 
 class Post(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     title = models.CharField(max_length=100)
     ohoystudio_url = models.CharField(max_length=300)
     youtube_url = models.TextField(default='')
@@ -72,11 +72,6 @@ class Post(models.Model):
             upload_to=get_image_path,
             format='JPEG',
             )
-    message_title_image11 = ProcessedImageField(blank=True,
-            processors=[Thumbnail(2000, 2000)],
-            upload_to=get_image_path,
-            format='JPEG',
-            )
     kakao_image12 = ProcessedImageField(blank=True,
             processors=[Thumbnail(2000, 2000)],
             upload_to=get_image_path,
@@ -122,10 +117,10 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post)
+    post = models.ForeignKey(Post, on_delete=models.PROTECT)
     # 이 코멘트는 Post 모델에 대해서 1:N의 관계를 가진다
     # post_id 라는 필드가 생김 외래키의 영향
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True  ,blank=True)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True  ,blank=True, on_delete=models.PROTECT)
     user = models.CharField(max_length=200)
     password1 = models.CharField(max_length=50)
     password2 = models.CharField(max_length=50, blank=True)
@@ -142,7 +137,7 @@ class Comment(models.Model):
         verbose_name_plural = '댓글'
 
 class PostGallery(models.Model):
-    post = models.ForeignKey(Post)
+    post = models.ForeignKey(Post, on_delete=models.PROTECT)
     name = models.CharField(max_length=100)
     gallery_image1 = ProcessedImageField(blank=True,
             processors=[Thumbnail(2000, 2000)],
@@ -167,7 +162,7 @@ class PostGallery(models.Model):
         verbose_name_plural = '갤러리'
 
 class SmsImage(models.Model):
-    post = models.ForeignKey(Post)
+    post = models.ForeignKey(Post, on_delete=models.PROTECT)
     name = models.CharField(max_length=100)
     message_image1 = ProcessedImageField(blank=True,
             processors=[Thumbnail(2000, 2000)],
