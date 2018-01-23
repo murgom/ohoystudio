@@ -13,10 +13,10 @@ urlpatterns = [
     path('comment/<int:pk>/delete/', views.comment_delete, name='comment_delete'),
 
 
-    path('sample/wedding<int:pk>/', views.sample_post_detail, name='sample_post_detail'),
-    path('sample/gallery_card<int:pk>/', views.sample_post_gallery, name='sample_post_gallery'),
-    path('sample/gallery_card2/<int:pk>/', views.sample_sms_image, name='sample_sms_image'),
-    path('sample/comments/', views.sample_comment_list, name='sample_comment_list'),
+    # path('sample/wedding<int:pk>/', views.sample_post_detail, name='sample_post_detail'),
+    # path('sample/gallery_card<int:pk>/', views.sample_post_gallery, name='sample_post_gallery'),
+    # path('sample/gallery_card2/<int:pk>/', views.sample_sms_image, name='sample_sms_image'),
+    # path('sample/comments/', views.sample_comment_list, name='sample_comment_list'),
     
-    path('sample/comment/<int:pk>/delete/', views.sample_comment_delete, name='sample_comment_delete'),
+    # path('sample/comment/<int:pk>/delete/', views.sample_comment_delete, name='sample_comment_delete'),
 ]

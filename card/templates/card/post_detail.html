@@ -213,7 +213,7 @@ $('#myModal').on('shown.bs.modal', function () {
 {% if post.story_image13 %}
     <div class="right_box">
       <!-- image13 구역 -->
-      <a href="{% url "card2:sms_image" pk=post.pk %}">
+      <a href="{% url "card:sms_image" pk=post.pk %}">
         <img src="{{ post.story_image13.url }}" alt=""></a>
     </div>
     {% else %}
