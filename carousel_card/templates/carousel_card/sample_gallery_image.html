@@ -1,0 +1,109 @@
+{% extends 'carousel_card/base.html' %}
+{% load imagekit %}
+
+{% block content %}
+<body leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+ <tbody>
+   <tr>
+      <td align="center">
+           {% if posts.gallery_image1 %}
+           <img src="{{ posts.gallery_image1.url }}" style="width:100%;">
+           {% else %}
+
+           {% endif %}
+       </td>
+    </tr>
+
+     <tr>
+         <td align="center">
+           {% if posts.gallery_image2 %}
+           <img src="{{ posts.gallery_image2.url }}" style="width:100%;">
+           {% else %}
+          
+           {% endif %}
+        </td>
+      </tr>
+      <tr>
+           <td align="center">
+             {% if posts.gallery_image3 %}
+             <img src="{{ posts.gallery_image3.url }}" style="width:100%;">
+             {% else %}
+
+             {% endif %}
+
+            </td>
+      </tr>
+      <tr>
+           <td align="center">
+             {% if posts.gallery_image4 %}
+             <img src="{{ posts.gallery_image4.url }}" style="width:100%;">
+             {% else %}
+
+             {% endif %}
+
+            </td>
+      </tr>
+   <tr>
+      <td align="center">
+           {% if posts.gallery_image5 %}
+           <img src="{{ posts.gallery_image5.url }}" style="width:100%;">
+           {% else %}
+
+           {% endif %}
+       </td>
+    </tr>
+
+     <tr>
+         <td align="center">
+           {% if posts.gallery_image6 %}
+           <img src="{{ posts.gallery_image6.url }}" style="width:100%;">
+           {% else %}
+          
+           {% endif %}
+        </td>
+      </tr>
+      <tr>
+           <td align="center">
+             {% if posts.gallery_image7 %}
+             <img src="{{ posts.gallery_image7.url }}" style="width:100%;">
+             {% else %}
+
+             {% endif %}
+
+            </td>
+      </tr>
+      <tr>
+           <td align="center">
+             {% if posts.gallery_image8 %}
+             <img src="{{ posts.gallery_image8.url }}" style="width:100%;">
+             {% else %}
+
+             {% endif %}
+
+            </td>
+      </tr>
+      <tr>
+           <td align="center">
+             {% if posts.gallery_image9 %}
+             <img src="{{ posts.gallery_image9.url }}" style="width:100%;">
+             {% else %}
+
+             {% endif %}
+
+            </td>
+      </tr>
+      <tr>
+           <td align="center">
+             {% if posts.gallery_image10 %}
+             <img src="{{ posts.gallery_image10.url }}" style="width:100%;">
+             {% else %}
+
+             {% endif %}
+
+            </td>
+      </tr>
+</tbody>
+</table>
+</body>
+{% endblock %}

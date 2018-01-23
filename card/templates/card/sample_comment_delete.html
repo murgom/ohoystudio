@@ -1,0 +1,47 @@
+{% extends 'card/base.html' %}
+{% load imagekit %}
+
+{% block content %}
+{% if messages %}
+<div class="container">
+
+
+  {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+    {{ message.tags }}
+    {{ message.message }}
+  {% endfor %}
+
+  </div>
+</div>
+{% endif %}
+<div class="text-center">
+
+<h3>댓글 삭제</h3>
+<form action="" class="form-horizontal" method="post">
+  {% csrf_token %}
+<p><input type="hidden" name="user" value="{{form.instance.user}}" maxlength="200" required="" id="id_user"></p>
+
+<p><input type="hidden" name="password1" value="{{form.instance.password1}}" required="" id="id_password1"></p>
+
+<p><input type="hidden" name="message" value="{{form.instance.message}}" maxlength="200" id="id_message"></p>
+
+<p><label for="id_password2">패스워드입력 : </label>
+  <input type="password" name="password2" 
+         required="" 
+         id="id_password2"></p>
+
+<p>
+      <div style="padding:10px;">
+          <button id="delete_message" class="btn btn-large btn-block black-background white" type="submit"
+          value="{{ request.GET.next }}">확인</button>
+      </div>
+</p>
+</form>
+<button class="btn btn-large btn-block black-background white"
+        id="previous_page" 
+        value="request.path"
+        onClick="history.back();">previous page</button>
+</div>
+
+{% endblock %}

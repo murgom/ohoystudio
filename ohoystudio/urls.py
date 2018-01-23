@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('card/', include('card.urls',namespace='card')),
     path('', include('card2.urls',namespace='card2')),
-    path('event', include('carousel_card.urls',namespace='carousel_card')),
+    path('event/', include('carousel_card.urls',namespace='carousel_card')),
     path('card3/', include('event.urls',namespace='event')),
     path('summernote/', include('django_summernote.urls')),
 ]
