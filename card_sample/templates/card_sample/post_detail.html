@@ -73,7 +73,7 @@ $('#myModal').on('shown.bs.modal', function () {
 {% if post.gallery_image7 %}
   <div class="gallery">
     <!-- image7 구역 -->
-    <a href="{% url "card:sample_post_gallery" pk=post.pk %}"><img src="{{ post.gallery_image7.url }}" alt=""></a>
+    <a href="{% url "card_sample:post_gallery" pk=post.pk %}"><img src="{{ post.gallery_image7.url }}" alt=""></a>
   </div>
   {% else %}
 
@@ -180,7 +180,7 @@ $('#myModal').on('shown.bs.modal', function () {
             <li style="overflow: hidden">
                 <p style="float: left;">{{comments.message}}</p>
                 <a style="float: right;" 
-                   href="{% url "card:sample_comment_delete" pk=comments.pk %}"
+                   href="{% url "card_sample:comment_delete" pk=comments.pk %}"
                    data-message="정말 삭제하시겠습니까?">
                 <img src="https://s3.ap-northeast-2.amazonaws.com/ohoystudio/Icon/delite.png"/></a>
             </li>
@@ -213,7 +213,7 @@ $('#myModal').on('shown.bs.modal', function () {
 {% if post.story_image13 %}
     <div class="right_box">
       <!-- image13 구역 -->
-      <a href="{% url "card:sample_sms_image" pk=post.pk %}">
+      <a href="{% url "card_sample:sms_image" pk=post.pk %}">
         <img src="{{ post.story_image13.url }}" alt=""></a>
     </div>
     {% else %}
@@ -252,6 +252,7 @@ $('#myModal').on('shown.bs.modal', function () {
     {% else %}
 
     {% endif %}
+
 
 <script type="text/javascript">
 var UserAgent = navigator.userAgent;

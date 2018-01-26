@@ -1,0 +1,1 @@
+default_app_config = 'carousel_card.apps.CarouselCardConfig'

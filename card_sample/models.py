@@ -10,10 +10,10 @@ import uuid
 import os
 
 def get_image_path(instance, filename):
-    return os.path.join('card', "image_%s" % str(instance), filename)
+    return os.path.join('smaple_card', "image_%s" % str(instance), filename)
 
 
-class Post(models.Model):
+class SamplePost(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     title = models.CharField(max_length=100)
     ohoystudio_url = models.CharField(max_length=300)
@@ -111,8 +111,8 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = '댓글있는 청첩장'
-        verbose_name_plural = '댓글있는 청첩장(메인)'
+        verbose_name = '(샘플)댓글있는 청첩장'
+        verbose_name_plural = '(샘플)댓글있는 청첩장(메인)'
 
     def __str__(self):
         return self.title
@@ -121,8 +121,8 @@ class Post(models.Model):
         return reverse('card:post_detail',args=[self.id])
 
 
-class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.PROTECT)
+class SampleComment(models.Model):
+    post = models.ForeignKey(SamplePost, on_delete=models.PROTECT)
     # 이 코멘트는 Post 모델에 대해서 1:N의 관계를 가진다
     # post_id 라는 필드가 생김 외래키의 영향
     author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True  ,blank=True, on_delete=models.PROTECT)
@@ -138,11 +138,11 @@ class Comment(models.Model):
         #id 역순서 배치
 
     class Meta:
-        verbose_name = '댓글'
-        verbose_name_plural = '댓글'
+        verbose_name = '(샘플)댓글'
+        verbose_name_plural = '(샘플)댓글'
 
-class PostGallery(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.PROTECT)
+class SamplePostGallery(models.Model):
+    post = models.ForeignKey(SamplePost, on_delete=models.PROTECT)
     name = models.CharField(max_length=100)
     gallery_image1 = ProcessedImageField(blank=True,
             processors=[Thumbnail(2000, 2000)],
@@ -163,11 +163,11 @@ class PostGallery(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = '갤러리'
-        verbose_name_plural = '갤러리'
+        verbose_name = '(샘플)갤러리'
+        verbose_name_plural = '(샘플)갤러리'
 
-class SmsImage(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.PROTECT)
+class SampleSmsImage(models.Model):
+    post = models.ForeignKey(SamplePost, on_delete=models.PROTECT)
     name = models.CharField(max_length=100)
     message_image1 = ProcessedImageField(blank=True,
             processors=[Thumbnail(2000, 2000)],
@@ -188,5 +188,5 @@ class SmsImage(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = '2G 핸드폰공유 이미지'
-        verbose_name_plural = '2G 핸드폰공유 이미지'
+        verbose_name = '(샘플)2G 핸드폰공유 이미지'
+        verbose_name_plural = '(샘플)2G 핸드폰공유 이미지'

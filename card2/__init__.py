@@ -1,0 +1,1 @@
+default_app_config = 'card2.apps.Card2Config'

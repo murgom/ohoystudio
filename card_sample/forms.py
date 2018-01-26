@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Post,Comment
+from .models import SamplePost,SampleComment
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 from django.utils.translation import ugettext, ugettext_lazy as _
@@ -11,7 +11,7 @@ class PostForm(forms.ModelForm):
     youtube_url = forms.CharField(widget=SummernoteWidget(attrs={'width': '100%', 'src':'img-responsive img-rounded'} ))
 
     class Meta:
-        model = Post
+        model = SamplePost
         fields = ('title','youtube_url',)
 
 
@@ -19,7 +19,7 @@ class PostForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
 
     class Meta:
-        model = Comment
+        model = SampleComment
         fields = ('author','user','password1','message',)
 
 
@@ -31,7 +31,7 @@ class CommentDeleteForm(forms.ModelForm):
     password2 = forms.CharField(widget=forms.PasswordInput)
 
     class Meta:
-        model = Comment
+        model = SampleComment
         fields = ('author','user','password1','message',)
 
     def clean_password2(self):

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'imagekit',
     'card',
     'card2',
+    'card_sample',
     'carousel_card',
     'event',
 ]
